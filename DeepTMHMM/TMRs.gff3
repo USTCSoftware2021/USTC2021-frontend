@@ -1,0 +1,18 @@
+##gff-version 3
+# Unnamed Length: 471
+# Unnamed Number of predicted TMRs: 7
+Unnamed	DeepTMHMM	outside	1	76				
+Unnamed	DeepTMHMM	TMhelix	76	102				
+Unnamed	DeepTMHMM	inside	102	111				
+Unnamed	DeepTMHMM	TMhelix	111	137				
+Unnamed	DeepTMHMM	outside	137	147				
+Unnamed	DeepTMHMM	TMhelix	147	172				
+Unnamed	DeepTMHMM	inside	172	192				
+Unnamed	DeepTMHMM	TMhelix	192	214				
+Unnamed	DeepTMHMM	outside	214	234				
+Unnamed	DeepTMHMM	TMhelix	234	259				
+Unnamed	DeepTMHMM	inside	259	324				
+Unnamed	DeepTMHMM	TMhelix	324	346				
+Unnamed	DeepTMHMM	outside	346	357				
+Unnamed	DeepTMHMM	TMhelix	357	383				
+Unnamed	DeepTMHMM	inside	383	471				
