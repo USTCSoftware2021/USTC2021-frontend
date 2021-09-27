@@ -34,7 +34,7 @@ body {
     display: block;
     color: white;
     text-decoration:none !important;
-    font-size: 20px;
+    font-size: 18px;
 }
 .bar #history{
     margin-right: 30px;
@@ -53,6 +53,7 @@ body {
     width: 500px;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 40px;
 }
 .input-parent{
     text-align: center;
@@ -66,7 +67,7 @@ body {
 .search {
     width: 500px;
     height: 45px;
-    border-radius: 18px;
+    border-radius: 22.5px;
     outline: none;
     border: 1px solid #ccc;
     padding-left: 20px;
@@ -75,11 +76,19 @@ body {
 .foot {
     color: black;
     font-size: 15px;
+    margin-bottom: 30px;
 }
 .input-btn {
-    margin-left: -35px;
-    cursor: pointer;
+    /* margin-left: -35px; */
+    /* cursor: pointer; */
     z-index: 2;
+}
+.btn-border {
+    width: 45px;
+    height: 45px;
+    margin-left: -45px;
+    cursor: pointer;
+    padding: 11.5px;
 }
 input{
     padding-inline-end: 40px;

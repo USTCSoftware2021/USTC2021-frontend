@@ -1,7 +1,8 @@
 var barWord = document.getElementsByClassName("barword")
 var barWordA = document.getElementsByClassName("barworda")
+var inputBtn = document.getElementsByClassName("btn-border")[0]
 
-for(let i = 0; i < 4; i++){
+for (let i = 0; i < 4; i++) {
     barWord[i].addEventListener("mouseover", () => {
         barWord[i].style.background = "white"
         barWord[i].style.cursor = "pointer"
@@ -23,4 +24,12 @@ for(let i = 0; i < 4; i++){
     })
 }
 
-    
+inputBtn.addEventListener("click", () => {
+    fetch("/api").then(
+        (res) => {
+            console.log(res)
+        }
+    )
+})
+
+
