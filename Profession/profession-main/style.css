@@ -1,0 +1,97 @@
+
+body {
+    background-color:#f1ede1 !important;
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    z-index: -1;
+}
+.bar{
+    position: fixed;
+    display: flex;
+    flex-flow: row;
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+    z-index: 10;
+}
+.barword{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.barblank{
+    flex-grow: 5;
+}
+.barword a{
+    display: block;
+    color: white;
+    text-decoration:none !important;
+    font-size: 20px;
+}
+.bar #history{
+    margin-right: 30px;
+}
+.bar img{
+    margin: 15px;
+    width: 100px;
+    height: 32px;
+}
+.leftside{
+    position:fixed;
+    align-self:flex-start;
+    width: 200px;
+    height: 100vh;
+    background-color: #8a98c9;
+}
+.leftside .buttons{
+    position: absolute;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    top: 30%;
+}
+.leftside .buttons .li{
+    letter-spacing: 2px;
+    font: 600 17px '';
+    padding: 30px 5px;
+    transition: .3s;
+    width: 200px;
+}
+.buttons>li:hover{
+    cursor: pointer;
+    background-color: #beb5df;
+}
+.blank {
+    width: 100vw;
+    height: 20vh;
+}
+
+.input-btn {
+    margin-left: -35px;
+    cursor: pointer;
+    z-index: 2;
+}
+/* three pictures */
+#img1 {
+    align-items: center;
+    width: 150px;
+    height: 200px;
+} 
+#img2 {
+    width: 300px;
+    height: 100px;
+}
+#img3 {
+    width: 80px;
+    height: 30px;
+    left: 0px;
+    top: 20px;
+    margin-left: 10px;
+}
