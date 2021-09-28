@@ -69,9 +69,13 @@ body {
     cursor: pointer;
     background-color: #ecdba5;
 }
-.blank {
-    width: 100vw;
-    height: 20vh;
+#content{
+    display: flex;
+    margin-top: 60px;
+    margin-left: 200px;
+    width: calc(100vw - 200px);
+    height: calc(100vh - 60px);
+    background-color: red;
 }
 
 .input-btn {
