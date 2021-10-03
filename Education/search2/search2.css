@@ -1,0 +1,118 @@
+
+body {
+    background-color:#f1ede1 !important;
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    z-index: -1;
+    background-image:url(../../static/jigsawbackground.svg);
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.bar{
+    position: fixed;
+    display: flex;
+    flex-flow: row;
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+}
+.barword{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* .barword:hover{
+    background-color: red;
+    color: black;
+    cursor: pointer;
+} */
+.barblank{
+    flex-grow: 5;
+}
+.barword a{
+    display: block;
+    color: white;
+    text-decoration:none !important;
+    font-size: 20px;
+}
+.bar #history{
+    margin-right: 30px;
+}
+.bar img{
+    margin: 15px;
+    width: 100px;
+    height: 32px;
+}
+.top{
+    display: flex;
+    align-items: center;
+}
+.wordlabel{
+    border:3px solid #b9b7ad;
+    border-radius:35px;
+    padding-top: 5px;
+    padding-bottom: 12px;
+    padding-left: 22px;
+    padding-right: 22px;
+    margin-left: 50px;
+}
+.top h4{
+    color: #FFC700;
+    font-size: 16px;
+}
+.top p{
+    color: #725e17d2;
+    font-size: 3px;
+    margin: 0px;
+}
+.blank {
+    width: 100vw;
+    height: 10vh;
+}
+.logo {
+    display: flex;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+.hint{
+    color: #63C4B4;
+}
+.stretch1 {
+    width: 100vw;
+    height: 40px;
+}
+.stretch2 {
+    width: 100vw;
+    flex-grow: 5;
+}
+#img1 {
+    align-items: center;
+    width: 180px;
+    height: 200px;
+} 
+#img2{
+    opacity: 0.9;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+#img2:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.05);
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}
+#img3{
+    opacity: 0.9;
+    cursor: pointer;
+    transition: all 0.4s ease-in-out;
+}
+#img3:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.05);
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
+}

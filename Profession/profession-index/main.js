@@ -9,7 +9,6 @@ for (let i = 0; i < 4; i++) {
         barWord[i].style.background = "white"
         barWord[i].style.cursor = "pointer"
         barWordA[i].style.color = "black"
-
     })
     barWord[i].addEventListener("mouseout", () => {
         // console.log("ok");
@@ -31,5 +30,20 @@ inputBtn.addEventListener("click", () => {
     saveinput.push(input.value)
     localStorage.setItem("cards", JSON.stringify(saveinput))
 })
+
+// async function postData(url, data) {
+//   // Default options are marked with *
+//   const response = await fetch(url, {
+//         body: JSON.stringify(data),
+//         method: 'POST',
+//         mode: 'cors',
+//         redirect: 'follow',
+//         referrer: 'no-referrer',
+//         headers: {
+//             'content-type': 'application/json'
+//         },
+//     })
+//     return await response.json() // parses response to JSON
+// }
 
 

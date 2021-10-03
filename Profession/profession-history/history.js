@@ -62,7 +62,6 @@ function getDataRow(h){
     btnDel.addEventListener("click", () => {
         btnDel.parentNode.parentNode.remove()
         localStorage.clear()
-        // window.location.reload()
         getData()
         saveList()
         showList()
