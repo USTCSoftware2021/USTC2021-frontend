@@ -1,6 +1,8 @@
 var barWord = document.getElementsByClassName("barword")
 var barWordA = document.getElementsByClassName("barworda")
 var inputBtn = document.getElementsByClassName("btn-border")[0]
+var input = document.getElementById("input")
+var saveinput = []
 
 for (let i = 0; i < 4; i++) {
     barWord[i].addEventListener("mouseover", () => {
@@ -25,11 +27,9 @@ for (let i = 0; i < 4; i++) {
 }
 
 inputBtn.addEventListener("click", () => {
-    fetch("/api").then(
-        (res) => {
-            console.log(res)
-        }
-    )
+    // console.log(input.value)
+    saveinput.push(input.value)
+    localStorage.setItem("cards", JSON.stringify(saveinput))
 })
 
 
