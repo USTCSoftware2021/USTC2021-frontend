@@ -26,7 +26,15 @@ for (let i = 0; i < 4; i++) {
 }
 
 inputBtn.addEventListener("click", () => {
-    postData('/api', {sequence: input.value})
+    postData('/api', {
+        sequence: input.value,
+        tasks: {
+            CellPLoc: true,
+            DeepTMHMM: true,
+            JPred: true,
+            IPC2: true
+        }
+    })
         .then(data => console.log(data)) // JSON from `response.json()` call
         .catch(error => console.error(error))
 })
