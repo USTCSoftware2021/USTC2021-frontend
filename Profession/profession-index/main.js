@@ -26,24 +26,47 @@ for (let i = 0; i < 4; i++) {
 }
 
 inputBtn.addEventListener("click", () => {
+    var sequence  = input.value.toUpperCase()
+    if (/^[ACDEFGHIKLMNPQRSTUVWY\s]+$/i.test(sequence)) {
+        save()
+        send()
+        window.location.href = "../profession-main"
+    }
+})
+
+function save(){
     // console.log(input.value)
     saveinput.push(input.value)
     localStorage.setItem("cards", JSON.stringify(saveinput))
-})
+}
 
-// async function postData(url, data) {
-//   // Default options are marked with *
-//   const response = await fetch(url, {
-//         body: JSON.stringify(data),
-//         method: 'POST',
-//         mode: 'cors',
-//         redirect: 'follow',
-//         referrer: 'no-referrer',
-//         headers: {
-//             'content-type': 'application/json'
-//         },
-//     })
-//     return await response.json() // parses response to JSON
-// }
+function send(){
+    postData('/api', {
+        sequence: input.value,
+        tasks: {
+            // CellPLoc: true,
+            DeepTMHMM: true,
+            // JPred: true,
+            // IPC2: true
+        }
+    })
+        .then(data => {
+            localStorage.setItem("hash", data.hash)
+        }) // JSON from `response.json()` call
+        .catch(error => console.error(error))
+}
 
-
+function postData(url, data) {
+    // Default options are marked with *
+    return fetch(url, {
+        body: JSON.stringify(data), // must match 'Content-Type' header
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        mode: 'cors', // no-cors, cors, *same-origin
+        redirect: 'follow', // manual, *follow, error
+        referrer: 'no-referrer', // *client, no-referrer
+        headers: {
+            'content-type': 'application/json'
+        },
+    })
+        .then(response => response.json()) // parses response to JSON
+}

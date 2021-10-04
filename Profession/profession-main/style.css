@@ -46,7 +46,6 @@ body {
     width: 200px;
     height: 100vh;
     background-color: #ddd6c0;
-    padding-left: 10px;
 }
 .leftside .buttons{
     position: absolute;
@@ -64,6 +63,7 @@ body {
     padding: 30px 5px;
     transition: .3s;
     width: 200px;
+    padding-left: 10px;
 }
 .buttons>li:hover{
     cursor: pointer;

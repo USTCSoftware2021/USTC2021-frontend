@@ -1,7 +1,8 @@
 var barWord = document.getElementsByClassName("barword")
 var barWordA = document.getElementsByClassName("barworda")
+var content = document.getElementById("content")
 
-for(let i = 0; i < 4; i++){
+for (let i = 0; i < 4; i++) {
     barWord[i].addEventListener("mouseover", () => {
         barWord[i].style.background = "white"
         barWord[i].style.cursor = "pointer"
@@ -23,6 +24,16 @@ for(let i = 0; i < 4; i++){
     })
 }
 
+var hash = localStorage.getItem("hash")
 
+url = '/api/' + hash + "/DeepTMHMM/plot.png"
 
-    
+content.innerHTML = "<img src='" + url + "'>"
+
+// fetch(url)
+//     .then(res => res.json())
+//     .then(data => {
+//         content.innerHTML = `
+            
+//         `
+//     })
