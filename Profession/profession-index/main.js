@@ -25,17 +25,18 @@ for (let i = 0; i < 4; i++) {
     })
 }
 
+
 inputBtn.addEventListener("click", () => {
     var sequence  = input.value.toUpperCase()
-    if (/^[ACDEFGHIKLMNPQRSTUVWY\s]+$/i.test(sequence)) {
+    // if (/^[ACDEFGHIKLMNPQRSTUVWY\s]+$/i.test(sequence)) {
         save()
-        send()
-        window.location.href = "../profession-main"
-    }
+        // send()
+        // window.location.href = "../profession-main"
+    // }
 })
 
 function save(){
-    // console.log(input.value)
+    saveinput = JSON.parse(localStorage.getItem("cards"))
     saveinput.push(input.value)
     localStorage.setItem("cards", JSON.stringify(saveinput))
 }

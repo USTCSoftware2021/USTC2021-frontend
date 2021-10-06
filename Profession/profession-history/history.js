@@ -8,7 +8,6 @@ function getData(){
         for (i = 0; i < newSequnences.length; i++){
             var newCard = {Id: i + 1, Sequnence: newSequnences[i], Time: new Date()}
             list.push(newCard)
-            // console.log(list)
         }
     }
 }
