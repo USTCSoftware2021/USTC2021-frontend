@@ -1,0 +1,87 @@
+/* paste from Profession */
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color:#f1ede1 !important;
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    z-index: -1;
+    background-image:url(../../static/jigsawbackground.svg);
+    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.bar{
+    position: fixed;
+    display: flex;
+    flex-flow: row;
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+    z-index: 10;
+}
+.barword{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.barblank{
+    flex-grow: 5;
+}
+.barword a{
+    display: block;
+    color: white;
+    text-decoration:none !important;
+    font-size: 20px;
+}
+.bar #history{
+    margin-right: 30px;
+}
+.bar img{
+    margin: 15px;
+    width: 100px;
+    height: 32px;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+.content p{
+    color: green;
+    font-weight: bolder;
+    margin-top: 10%;
+    font-size: x-large;
+}
+.content .two-cards{
+    display: flex;
+    margin-top: 7%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.content .two-cards img{
+    margin: 0 30px;
+}
+.content .two-cards img:hover{
+    cursor: pointer;
+}
+
+#card1:hover{
+    transform: scale(1.01, 1.01);
+    transition: transform 0.4s ease;
+}
+#card1.show-back{
+    transform: rotateX(180deg);
+}
+
+#card2:hover{
+    transform: scale(1.01, 1.01);
+    transition: transform 0.4s ease;
+}
