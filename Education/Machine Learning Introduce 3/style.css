@@ -1,0 +1,183 @@
+body {
+    background-color:#f1ede1 !important;
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    z-index: -1;
+}
+.bar{
+    position: fixed;
+    display: flex;
+    flex-flow: row;
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+    z-index:100;
+}
+.barword{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* .barword:hover{
+    background-color: red;
+    color: black;
+    cursor: pointer;
+} */
+.barblank{
+    flex-grow: 5;
+}
+.barword a{
+    display: block;
+    color: white;
+    text-decoration:none !important;
+    font-size: 20px;
+}
+.bar #history{
+    margin-right: 30px;
+}
+.bar img{
+    margin: 15px;
+    width: 100px;
+    height: 32px;
+}
+.blank {
+    width: 100vw;
+    height: 20vh;
+}
+.logo {
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-parent{
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.stretch {
+    width: 100vw;
+    flex-grow: 5;
+}
+.search {
+    width: 500px;
+    height: 45px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    margin: auto;
+}
+.foot {
+    color: black;
+    font-size: 15px;
+}
+.input-btn {
+    margin-left: -35px;
+    cursor: pointer;
+    z-index: 2;
+    display:none;
+}
+input{
+    padding-inline-end: 40px;
+    padding-inline-start: 60px;
+    display:none;
+}
+/* four pictures */
+#img1 {
+    align-items: center;
+    width: 150px;
+    height: 200px;
+} 
+#img2 {
+    width: 300px;
+    height: 100px;
+}
+#img3 {
+    width: 80px;
+    height: 30px;
+    left: 0px;
+    top: 20px;
+    margin-left: 10px;
+}
+#img4 {
+    height: 100px;
+    width: 165px;
+}
+#img5 {
+    height: 70px;
+    width: 70px;
+}
+.year{
+    position: absolute;
+    width: 50vw;
+    height: 10vh;
+    left: 37.5vw;
+    top: 10vh;
+    
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 40px;
+    line-height: 56px;
+    letter-spacing: 0.5em;
+    
+    color: #FF9E45;
+}
+.word{
+    position: absolute;
+    width: 50vw;
+    height: 70vh;
+    left: 25vw;
+    top: 28vh;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'liga' off;
+
+    color: rgba(0, 0, 0, 0.8);
+
+
+}
+.special{
+    font-size: 30px;
+    font-weight: bold;
+}
+.vector{
+    position: absolute;
+    left: 55vw;
+    top: 65vh;
+}
+.click{
+    position: absolute;
+    left: 60vw;
+    top: 70vh;
+}
+.logocolorful{
+    position: absolute;
+    left: 30px;
+    top: 85vh;
+}
+.before{
+    height: 50px;
+    width: 70px;
+    position: absolute;
+    left: 5vw;
+    top: 50vh;
+}
+.next{
+    height: 50px;
+    width: 70px;
+    position: absolute;
+    left: 90vw;
+    top: 50vh;
+}
