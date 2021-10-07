@@ -26,11 +26,19 @@ for (let i = 0; i < 4; i++) {
 
 var hash = localStorage.getItem("hash")
 
-waitUntilSuccess("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
+// waitUntilSuccess("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
+//     .then((res) => {
+//         content.innerHTML = "<img src='" + '/api/' + hash + "/DeepTMHMM/plot.png" + "'>"
+//         console.log(res)
+//     },
+//         () => {
+//             console.log("Timeout or server error.")
+//         })
+
+waitUntilSuccessAsync("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
     .then((res) => {
         content.innerHTML = "<img src='" + '/api/' + hash + "/DeepTMHMM/plot.png" + "'>"
         console.log(res)
-    }, 
-    () => {
+    }).catch(e => {
         console.log("Timeout or server error.")
     })

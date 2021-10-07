@@ -37,19 +37,36 @@ function recurseRequest(url, interval, times, resolve, reject) {
             if (obj.status == "Success") {
                 resolve(obj)
                 return
-            } 
-            else if (obj.status == "Failed") {
+            }
+            else if (obj.status == "Failed" | times == 0) {
                 reject()
             }
             else if (times > 0) {
                 setTimeout(() => {
                     recurseRequest(url, interval, times - 1, resolve, reject)
                 }, interval);
-            } 
-            else {
-                reject()
             }
         })
 }
 
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
+async function waitUntilSuccessAsync(url, timeBeforeRequest, interval, retry) {
+    let obj = await (await fetch(url)).json()
+    if (obj.status == "Success") {
+        return obj
+    } else {
+        await sleep(timeBeforeRequest)
+        while (obj.status != "Success" && retry > 0) {
+            await sleep(interval)
+            obj = await (await fetch(url)).json()
+        }
+        if (obj.status == "Success") {
+            return obj
+        } else {
+            throw Error()
+        }
+    }
+}
