@@ -77,6 +77,11 @@ body {
     height: calc(100vh - 60px);
     background-color: red;
 }
+.content img{
+    width: 50%;
+    height: 50%;
+}
+
 
 .input-btn {
     margin-left: -35px;
