@@ -27,8 +27,11 @@ for (let i = 0; i < 4; i++) {
 
 var hash = localStorage.getItem("hash")
 
-url = '/api/' + hash + "/DeepTMHMM/plot.png"
-
-
-
-// content.innerHTML = "<img src='" + url + "'>"
+waitUntilSuccess("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
+    .then((res) => {
+        content.innerHTML = "<img src='" + '/api/' + hash + "/DeepTMHMM/plot.png" + "'>"
+        console.log(res)
+    }, 
+    () => {
+        console.log("Timeout or server error.")
+    })

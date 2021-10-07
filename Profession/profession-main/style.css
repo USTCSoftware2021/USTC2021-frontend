@@ -76,6 +76,11 @@ body {
     width: calc(100vw - 200px);
     height: calc(100vh - 60px);
 }
+.content img{
+    width: 50%;
+    height: 50%;
+}
+
 
 
 

@@ -66,14 +66,54 @@ body {
     word-break: break-all;
     overflow: hidden;
 }
-.box p{
+.box h3{
     font-size: 36px;
     font-weight: bold;
     font-family: Roboto;
     color: #24AACB;
     margin: 10px;
 }
-
+.box .content{
+    display: flex;
+    margin: 20px;
+    flex-direction: row;
+    width: 100%;
+    height: 50vh;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+.box .content p{
+    color: #24AACB;
+    font-weight: bold;
+}
+.box .content .gene2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    width: 45%;
+}
+.box .content .gene2 img{
+    margin-bottom: 20px;
+}
+.box .content .plant2 img{
+    margin-bottom: 20px;
+}
+.box .content .plant2{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    width: 45%;
+}
 .box .picture {
     display: flex;
     justify-content: space-between;

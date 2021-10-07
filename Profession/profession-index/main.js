@@ -28,20 +28,26 @@ for (let i = 0; i < 4; i++) {
 
 inputBtn.addEventListener("click", () => {
     var sequence  = input.value.toUpperCase()
-    if (/^[ACDEFGHIKLMNPQRSTUVWY\s]+$/i.test(sequence)) {
-        save()
-        send()
+    if (checkSequece(sequence)) {
+        saveSequence()
+        sendSequence()
         window.location.href = "../profession-main"
     }
 })
 
-function save(){
+function saveSequence(){
     saveinput = JSON.parse(localStorage.getItem("cards"))
-    saveinput.push(input.value)
+    if (saveinput) {
+        saveinput.push(input.value)
+    }
     localStorage.setItem("cards", JSON.stringify(saveinput))
 }
 
-function send(){
+function checkSequece(sequence){
+    return /^[ACDEFGHIKLMNPQRSTUVWY\s]+$/i.test(sequence)
+}
+
+function sendSequence(){
     postData('/api', {
         sequence: input.value,
         tasks: {
@@ -53,21 +59,6 @@ function send(){
     })
         .then(data => {
             localStorage.setItem("hash", data.hash)
-        }) // JSON from `response.json()` call
+        })
         .catch(error => console.error(error))
-}
-
-function postData(url, data) {
-    // Default options are marked with *
-    return fetch(url, {
-        body: JSON.stringify(data), // must match 'Content-Type' header
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, cors, *same-origin
-        redirect: 'follow', // manual, *follow, error
-        referrer: 'no-referrer', // *client, no-referrer
-        headers: {
-            'content-type': 'application/json'
-        },
-    })
-        .then(response => response.json()) // parses response to JSON
 }
