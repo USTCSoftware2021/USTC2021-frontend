@@ -15,7 +15,6 @@ body {
     background-color: black;
     width: 100vw;
     height: 60px;
-    z-index: 10;
 }
 .barword{
     display: flex;
@@ -23,6 +22,11 @@ body {
     padding-left: 20px;
     padding-right: 20px;
 }
+/* .barword:hover{
+    background-color: red;
+    color: black;
+    cursor: pointer;
+} */
 .barblank{
     flex-grow: 5;
 }
@@ -40,69 +44,59 @@ body {
     width: 100px;
     height: 32px;
 }
-.leftside{
-    position:fixed;
-    align-self:flex-start;
-    width: 200px;
-    height: 100vh;
-    background-color: #ddd6c0;
+.blank {
+    width: 100vw;
+    height: 20vh;
 }
-.leftside .buttons{
-    position: absolute;
-    padding: 0px;
-    margin: 0px;
-    list-style-type: none;
-    color: #fff;
+.logo {
     display: flex;
-    flex-direction: column;
-    top: 30%;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
 }
-.leftside .buttons .li{
-    letter-spacing: 2px;
-    font: 600 17px '';
-    padding: 30px 5px;
-    transition: .3s;
-    width: 200px;
-    padding-left: 10px;
-}
-.buttons>li:hover{
-    cursor: pointer;
-    background-color: #ecdba5;
-}
-#content{
+.input-parent{
+    text-align: center;
     display: flex;
-    margin-top: 60px;
-    margin-left: 200px;
-    width: calc(100vw - 200px);
-    height: calc(100vh - 60px);
+    align-items: center;
 }
-
-
-
-
-
-
-
-
+.stretch1 {
+    width: 100vw;
+    height: 40px;
+}
+.stretch2 {
+    width: 100vw;
+    flex-grow: 5;
+}
+.search {
+    width: 500px;
+    height: 45px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    margin: auto;
+}
+.foot {
+    color: black;
+    font-size: 15px;
+}
 .input-btn {
     margin-left: -35px;
     cursor: pointer;
     z-index: 2;
 }
+input{
+    padding-inline-end: 40px;
+    padding-inline-start: 60px;
+}
 /* three pictures */
 #img1 {
     align-items: center;
-    width: 150px;
+    width: 240px;
     height: 200px;
 } 
 #img2 {
     width: 300px;
     height: 100px;
 }
-#img3 {
-    width: 80px;
-    height: 30px;
-    left: 0px;
-    top: 20px;
-    margin-left: 10px;
-}
+

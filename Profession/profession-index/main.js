@@ -28,11 +28,11 @@ for (let i = 0; i < 4; i++) {
 
 inputBtn.addEventListener("click", () => {
     var sequence  = input.value.toUpperCase()
-    // if (/^[ACDEFGHIKLMNPQRSTUVWY\s]+$/i.test(sequence)) {
+    if (/^[ACDEFGHIKLMNPQRSTUVWY\s]+$/i.test(sequence)) {
         save()
-        // send()
-        // window.location.href = "../profession-main"
-    // }
+        send()
+        window.location.href = "../profession-main"
+    }
 })
 
 function save(){
@@ -45,8 +45,8 @@ function send(){
     postData('/api', {
         sequence: input.value,
         tasks: {
-            // CellPLoc: true,
-            DeepTMHMM: true,
+            CellPLoc: true,
+            // DeepTMHMM: true,
             // JPred: true,
             // IPC2: true
         }
