@@ -86,12 +86,27 @@ body {
 .middle {
     display: flex;
     flex-flow: row;
+    height: 48vh;
+    justify-content: space-between;
 }
-label {
-    margin: 10px;
-    padding: 5px;
-    font-size: 3vh;
-    font-weight: normal !important;
+.middle h4 {
+    font-size: 24px;
+    margin-left: 40px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-weight: 100;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+}
+.content img {
+    height: 300px;
+    margin-left: 50px;
+}
+#imgin {
+    display: none;
+    margin-left:-110px;
 }
 .pic {
     display: flex;
@@ -99,6 +114,7 @@ label {
     align-items: center;
 }
 .frame {
+    width: 15px;
     margin-left: 20px;
     margin-right: 20px;
 }
