@@ -48,23 +48,22 @@ body {
     width: 100px;
     height: 32px;
 }
-#close:hover{
-    cursor: pointer;
-}
 .box{
     position: absolute;
     width: 85vw;
     height: 85vh;
     left: 7.5vw;
     top: 10vh;
-    background: #CDE4E4;
-    border: 8px solid #24AACB;
+    background: #F9E2C4;
+    border: 8px solid #FF9E45;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px 209px rgba(74, 74, 74, 0.48), inset 0px 0px 12px rgba(255, 255, 255, 0.25);
     border-radius: 30px;
     z-index: 0.5;
     display: flex;
     flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
     overflow: hidden;
 }
 .box .topside{
@@ -75,15 +74,49 @@ body {
     font-size: 36px;
     font-weight: bold;
     font-family: Roboto;
-    color:  #24AACB;
+    color: #FF9E45;
     margin: 10px;
 }
-.box .text{
+.box .content{
     display: flex;
-    margin: 7%;
-    justify-content: center;
-    align-items: center;
+    margin: 20px;
+    flex-direction: row;
+    width: 100%;
+    height: 50vh;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+.box .content .plant-light{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
     text-align: center;
+    width: 40%;
+}
+.box .content .plant-light p{
+    color: #24AACB;
+    font-size: large;
+    font-weight: bolder;
+    margin: 20px;
+}
+.box .content .text{
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    width: 39%;
+    text-align: center;
+    margin-top: 10%;
+    margin-right: 10%;
+}
+.box .content .text p{
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+    line-height: 2;
 }
 .box .picture {
     display: flex;
@@ -99,5 +132,8 @@ body {
     /* margin-top: 10%; */
 }
 .box .picture img:nth-child(2){
+    cursor: pointer;
+}
+#close:hover{
     cursor: pointer;
 }

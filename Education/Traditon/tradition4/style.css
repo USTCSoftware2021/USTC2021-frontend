@@ -66,6 +66,10 @@ body {
     word-break: break-all;
     overflow: hidden;
 }
+.box .topside{
+    display: flex;
+    justify-content: space-between;
+}
 .box h3{
     font-size: 36px;
     font-weight: bold;
@@ -128,5 +132,8 @@ body {
     /* margin-top: 10%; */
 }
 .box .picture img:nth-child(2){
+    cursor: pointer;
+}
+#close:hover{
     cursor: pointer;
 }
