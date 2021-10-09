@@ -1,7 +1,5 @@
 var barWord = document.getElementsByClassName("barword")
 var barWordA = document.getElementsByClassName("barworda")
-var next = document.getElementById("next")
-var close = document.getElementById("close")
 
 for(let i = 0; i < 4; i++){
     barWord[i].addEventListener("mouseover", () => {
@@ -24,13 +22,5 @@ for(let i = 0; i < 4; i++){
         barWord[i].style.background = "black"
     })
 }
-
-next.addEventListener("click", () => {
-    window.location.href = "../tradition3/index.html"
-})
-close.addEventListener("click", () => {
-    window.location.href = "../tradition1/index.html"
-})
-
 
     

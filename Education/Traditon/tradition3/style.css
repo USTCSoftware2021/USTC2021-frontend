@@ -48,6 +48,9 @@ body {
     width: 100px;
     height: 32px;
 }
+#close:hover{
+    cursor: pointer;
+}
 .box{
     position: absolute;
     width: 85vw;
@@ -65,6 +68,10 @@ body {
     word-wrap: break-word;
     word-break: break-all;
     overflow: hidden;
+}
+.box .topside{
+    display: flex;
+    justify-content: space-between;
 }
 .box h3{
     font-size: 36px;

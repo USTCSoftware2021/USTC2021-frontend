@@ -26,7 +26,7 @@ for(let i = 0; i < 4; i++){
 }
 
 next.addEventListener("click", () => {
-    window.location.href = "../tradition3/index.html"
+    window.location.href = "../tradition7/index.html"
 })
 close.addEventListener("click", () => {
     window.location.href = "../tradition1/index.html"

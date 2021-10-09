@@ -48,9 +48,6 @@ body {
     width: 100px;
     height: 32px;
 }
-#close:hover{
-    cursor: pointer;
-}
 .box{
     position: absolute;
     width: 85vw;
@@ -65,6 +62,8 @@ body {
     z-index: 0.5;
     display: flex;
     flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
     overflow: hidden;
 }
 .box .topside{
@@ -75,15 +74,48 @@ body {
     font-size: 36px;
     font-weight: bold;
     font-family: Roboto;
-    color:  #24AACB;
+    color: #24AACB;
     margin: 10px;
 }
-.box .text{
+.box .content{
     display: flex;
-    margin: 7%;
-    justify-content: center;
-    align-items: center;
+    margin: 20px;
+    flex-direction: row;
+    width: 100%;
+    height: 50vh;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+.box .content .plant-light{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
     text-align: center;
+    width: 40%;
+}
+.box .content .plant-light p{
+    color: #24AACB;
+    font-size: large;
+    font-weight: 200px;
+    margin: 20px;
+}
+.box .content .text{
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    width: 30%;
+    text-align: center;
+    margin-top: 10%;
+}
+.box .content .text p{
+    color: #30D630;
+    font-weight: bolder;
+    font-size: larger;
+    line-height: 2;
 }
 .box .picture {
     display: flex;
@@ -99,5 +131,8 @@ body {
     /* margin-top: 10%; */
 }
 .box .picture img:nth-child(2){
+    cursor: pointer;
+}
+#close:hover{
     cursor: pointer;
 }
