@@ -37,9 +37,18 @@ var hash = localStorage.getItem("hash")
 //         })
 
 waitUntilSuccessAsync("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
-    .then((res) => {
-        content.innerHTML = "<img src='" + '/api/' + hash + "/DeepTMHMM/plot.png" + "'>"
-        console.log(res)
+    .then((obj) => {
+        deepTMHMM = document.getElementById("transmembrane_topology")
+        deepTMHMM.querySelector("#topology").innerText = obj["/predicted_topologies.3line"]
+        deepTMHMM.querySelector("#statistic").innerText = obj["/TMRs.gff3"]
+        deepTMHMM.querySelector("#topology_img").src = '/api/' + hash + "/DeepTMHMM/plot.png"
     }).catch(e => {
-        console.log("Timeout or server error.")
+        console.log(e)
+    })
+
+waitUntilSuccessAsync("/api/" + hash + "/JPred", 5000, 500, 80)
+    .then((obj) => {
+        document.querySelector("#secondary_structure").innerHTML = obj["svg"]
+    }).catch(e => {
+        console.log(e)
     })

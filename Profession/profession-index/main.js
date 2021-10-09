@@ -52,9 +52,9 @@ function sendSequence(){
         sequence: input.value,
         tasks: {
             CellPLoc: true,
-            // DeepTMHMM: true,
-            // JPred: true,
-            // IPC2: true
+            DeepTMHMM: true,
+            JPred: true,
+            IPC2: true
         }
     })
         .then(data => {
