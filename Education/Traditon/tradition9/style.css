@@ -65,10 +65,7 @@ body {
     word-wrap: break-word;
     word-break: break-all;
     overflow: hidden;
-}
-.box .topside{
-    display: flex;
-    justify-content: space-between;
+    padding: 10px;
 }
 .box h3{
     font-size: 36px;
@@ -135,6 +132,26 @@ body {
 .box .picture img:nth-child(2){
     cursor: pointer;
 }
-#close:hover{
+.topside{
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    height: 15vh;
+    padding-right: 30px;
+    align-items: center;
+}
+#close {
+    background-color: #FEE48A;
+    border-radius: 10px;
+    margin-top: 10px;
+    align-self: flex-start;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#close:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+.topblank {
+    flex-grow: 5;
 }
