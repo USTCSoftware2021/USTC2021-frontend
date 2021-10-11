@@ -48,7 +48,7 @@ waitUntilSuccessAsync("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
 
 waitUntilSuccessAsync("/api/" + hash + "/JPred", 5000, 500, 80)
     .then((obj) => {
-        document.querySelector("#secondary_structure").innerHTML = obj["svg"]
+        document.querySelector("#JPred").innerHTML = obj["svg"]
     }).catch(e => {
         console.log(e)
     })
