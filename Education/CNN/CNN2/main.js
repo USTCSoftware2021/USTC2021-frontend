@@ -8,6 +8,10 @@ var flag = 1
 var temp1
 var temp
 var sum = 0
+var close = document.getElementById("close")
+close.addEventListener("click", () => {
+    window.location.href = "../../FourModels/index.html"
+})
 
 for(let i = 0; i < 4; i++){
     barWord[i].addEventListener("mouseover", () => {

@@ -2,7 +2,10 @@ var barWord = document.getElementsByClassName("barword")
 var barWordA = document.getElementsByClassName("barworda")
 var show = document.getElementById("show")
 var next = document.getElementById("next")
-
+var close = document.getElementById("close")
+close.addEventListener("click", () => {
+    window.location.href = "../../FourModels/index.html"
+})
 for(let i = 0; i < 4; i++){
     barWord[i].addEventListener("mouseover", () => {
         barWord[i].style.background = "white"

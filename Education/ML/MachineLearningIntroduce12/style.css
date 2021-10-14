@@ -1,6 +1,6 @@
 
 body {
-    background-color:#DADADA !important;
+    background-color:#f1ede1 !important;
     width: 100vw; 
     height: 100vh;
     display: flex;
@@ -123,13 +123,13 @@ input{
 }
 .movingup_pic{
     position: absolute;
-    width: 80vw;
+    width: 80vm;
     height: 332px;
     left: 231px;
     top: 370px;
     animation:movepic 1.6s;
 	-webkit-animation:movepic 1.6s; /* Safari and Chrome */
-    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 .movingup_word{
     position: absolute;
@@ -147,7 +147,7 @@ input{
     color: #FF9E45;
     animation:moveword 1.6s;
 	-webkit-animation:moveword 1.6s; /* Safari and Chrome */
-    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 .special{
     color:#63C4B4;
@@ -164,7 +164,7 @@ input{
     top: 300px;
     animation:move 0.8s;
 	-webkit-animation:move 0.8s; /* Safari and Chrome */
-    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
 }
 /* move year */
 @keyframes move
@@ -196,18 +196,18 @@ input{
 
 
 
-/* @-webkit-keyframes movepic Safari and Chrome */
-/* {
+@-webkit-keyframes movepic /* Safari and Chrome */
+{
 	0%   {opacity:0;}
 	25%  {opacity:0;}
     50%  {opacity:0;}
     70%  {opacity:1;}
 	100% {opacity:1;}
-} */
+}
 
 
 /* move word */
-@keyframes moveword 
+@keyframes moveword
 {
 	0%   {opacity:0;}
 	25%  {opacity:0;}
@@ -218,13 +218,13 @@ input{
 
 
 
-/* @-webkit-keyframes moveword Safari and Chrome */
-/* {
+@-webkit-keyframes moveword /* Safari and Chrome */
+{
 	0%   {opacity:0;}
 	25%  {opacity:0;}
     50%  {opacity:0;}
     90%  {opacity:0;}
 	100% {opacity:1;}
-} */
+}
 
 

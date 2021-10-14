@@ -35,30 +35,110 @@
     <div class="box">
 
     </div>
-    <div class="logocolorful">
+    <div class="logocolorful" id="logo1">
         <img src="../../../static/cat_colorful.png" id="img4">
     </div>
     <div class="title">
         <img src="../../../static/word1.png" id="img5" >
     </div>
-    <div class="word">
-        A perceptron receives multiple input signals and outputs one signal.
-        <br></br>
-        The "signal" in this case can be regarded as something "fluid" like an electric current or a river.
-        <br></br>
-        x1, x2 are the input signals and y is the output signal.
-        <br></br>
-        w1 and w2 are the weights (w is the first name of weight).
-        <br></br>
-        The ○ in the diagram are called "neurons" or "nodes".
-        When the input signal is sent to the neuron, it is multiplied by a fixed weight .
-        <br></br>
-        The neuron calculates the sum of the transmitted signals and outputs 1 only when the sum exceeds a certain threshold.
+    <div class="back">
+        <a href="../../../Education/ML/MachineLearningIntroduce3/index.html"><img src="../../../static/x.svg" id="img7" ></img></a>
     </div>
-    <div class="pic">
-        <img src="../../../static/perceptron.png" id="img6">
+    <div class="range" id="Range">
+        <input id="range1" type="range" min="0" max="10" value="5"step="1" oninput="change()" onchange="change()"><br></br>
+        <input id="range2" type="range" min="0" max="10" value="5"step="1" oninput="change()" onchange="change()"><br></br>
+        <input id="range3" type="range" min="0" max="10" value="5"step="1" oninput="change()" onchange="change()"><br></br>
+        <!-- <span id="value">0</span> -->
+    </div>
+    <div id="game">
+        <div class="value">
+            <span id="value1">0</span><br></br>
+            <span id="value2">0</span><br></br>
+            <span id="value3">0</span><br></br>
+        </div>
+        <div class="ww">
+            w1:<br></br>
+            w2:<br></br>
+            θ：<br></br>
+        </div>
+    </div>
+
+    <div id="page1">
+        <div class="word" id="word1">
+            A perceptron receives multiple input signals and outputs one signal.
+            <br></br>
+            The "signal" in this case can be regarded as something "fluid" like an electric current or a river.
+            <br></br>
+            x1, x2 are the input signals and y is the output signal.
+            <br></br>
+            w1 and w2 are the weights (w is the first name of weight).
+            <br></br>
+            The ○ in the diagram are called "neurons" or "nodes".
+            When the input signal is sent to the neuron, it is multiplied by a fixed weight .
+            <br></br>
+            The neuron calculates the sum of the transmitted signals and outputs 1 only when the sum exceeds a certain threshold.
+        </div>
+        <div class="pic" id="pic1">
+            <img src="../../../static/perceptron.png" id="img6">
+        </div>
+        <div class="example" id="btn1">
+            <button class="button1"></button>
+        </div>
+    </div>  
+    <div id="page2">
+        <div class="fruits" id="pic2">
+            <img src="../../../static/fruits.png" id="img9">
+        </div>
+        <div class="rec1" id="pic3">
+            <img src="../../../static/rectangle1.png" id="img10">
+        </div>
+        <div class="sweet" id="pic4">
+            <img src="../../../static/sweet.png" id="img11">
+        </div>
+        <div class="rec2" id="pic7">
+            <img src="../../../static/rectangle2.png" id="img12">
+        </div>
+        <div class="picture" id="pic5">
+            <img src="../../../static/perceptron.png" id="img13">
+        </div>
+        <div class="goodorbad" id="pic6">
+            <img src="../../../static/goodorbad.png" id="img14">
+        </div>
+        <div class="example" id="btn2">
+            <button class="button2 inactive" disabled="disabled" id="btn22"></button>
+        </div>
+
+    </div>
+    <div id="page3">
+        <div class="example" id="btn3">
+            <a href="../../../Education/ML/MachineLearningIntroduce3/index.html"><button class="button3" id="btn3"></button></a>
+        </div>
+        <div class="rec3" >
+            <img src="../../../static/rectangle3.png" id="img15">
+        </div>
+        <div class="watermelon" id="pic8">
+            <img src="../../../static/watermelon.png" id="img16">
+        </div>
+        <div class="stg" id="pic9">
+            <img src="../../../static/stg.png" id="img17">
+        </div>
+        <div class="eight" >
+            <img src="../../../static/eight.png" id="img18">
+        </div>
+        <div class="two" >
+            <img src="../../../static/two.png" id="img19">
+        </div>
+        <div class="B" >
+            <img src="../../../static/B.png" id="img20">
+        </div>
+        <div class="G" >
+            <img src="../../../static/G.png" id="img21">
+        </div>
+        <div class="word2" >
+            You can see that the more important character will have a larger w
+        </div>
     </div>
 </body>
-<script src="/utils.js"></script>
 <script src="main.js"></script>
 </html>
+

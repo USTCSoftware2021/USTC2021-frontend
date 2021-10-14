@@ -99,34 +99,83 @@ body {
 .pen {
     top: 190px;
     left: 120px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.pen:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
 .shrimp {
     top: 140px;
     left: 250px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 100px;
+}
+.shrimp:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
 .bottle {
     top: 350px;
     left: 160px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.bottle:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
 .mutton {
     top: 400px;
     left: 310px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.mutton:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
 .duck {
     top: 380px;
     left: 560px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.duck:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
 .chicken {
     top: 340px;
     left: 990px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.chicken:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
 .pork {
     top: 130px;
     left: 600px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.pork:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
 .beef {
     top: 150px;
     left: 900px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.beef:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
 }
 .bubble1 {
     top: 220px;

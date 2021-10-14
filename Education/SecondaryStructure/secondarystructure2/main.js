@@ -1,6 +1,13 @@
 var barWord = document.getElementsByClassName("barword")
 var barWordA = document.getElementsByClassName("barworda")
-
+var img4 = document.getElementById("img4")
+img4.addEventListener("click", () => {
+    window.location.href = "../secondarystructure3/index.html"
+})
+var x = document.getElementById("x")
+x.addEventListener("click", () => {
+    window.location.href = "../../FourModels/index.html"
+})
 
 for(let i = 0; i < 4; i++){
     barWord[i].addEventListener("mouseover", () => {
