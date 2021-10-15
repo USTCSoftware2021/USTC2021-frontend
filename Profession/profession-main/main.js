@@ -1,31 +1,8 @@
-var barWord = document.getElementsByClassName("barword")
-var barWordA = document.getElementsByClassName("barworda")
-var content = document.getElementById("content")
+var $ = (x) => document.querySelector(x);
+var $$ = (x) => document.querySelectorAll(x);
+var content = $("#content");
 
-for (let i = 0; i < 4; i++) {
-    barWord[i].addEventListener("mouseover", () => {
-        barWord[i].style.background = "white"
-        barWord[i].style.cursor = "pointer"
-        barWordA[i].style.color = "black"
-
-    })
-    barWord[i].addEventListener("mouseout", () => {
-        // console.log("ok");
-        barWord[i].style.background = "black"
-        barWordA[i].style.color = "white"
-    })
-    barWordA[i].addEventListener("mouseover", () => {
-        barWord[i].style.background = "white"
-        barWordA[i].style.color = "black"
-    })
-    barWordA[i].addEventListener("mouseout", () => {
-        barWordA[i].style.color = "white"
-        barWord[i].style.background = "black"
-    })
-}
-
-
-var hash = localStorage.getItem("hash")
+var hash = localStorage.getItem("hash");
 
 // waitUntilSuccess("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
 //     .then((res) => {
@@ -36,19 +13,65 @@ var hash = localStorage.getItem("hash")
 //             console.log("Timeout or server error.")
 //         })
 
-waitUntilSuccessAsync("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
-    .then((obj) => {
-        deepTMHMM = document.getElementById("transmembrane_topology")
-        deepTMHMM.querySelector("#topology").innerText = obj["/predicted_topologies.3line"]
-        deepTMHMM.querySelector("#statistic").innerText = obj["/TMRs.gff3"]
-        deepTMHMM.querySelector("#topology_img").src = '/api/' + hash + "/DeepTMHMM/plot.png"
-    }).catch(e => {
-        console.log(e)
-    })
+function sidebarClickHandler(e) {
+    var items = [...$$(".leftside .buttons .li")];
+    var divs = [...$("#content").children];
+    items.map((elem, index) => {
+        if (elem === e.target) {
+            elem.classList.add("clicked");
+            divs[index].hidden = false;
+        } else {
+            elem.classList.remove("clicked");
+            divs[index].hidden = true;
+        }
+    });
+}
 
-waitUntilSuccessAsync("/api/" + hash + "/JPred", 5000, 500, 80)
-    .then((obj) => {
-        document.querySelector("#JPred").innerHTML = obj["svg"]
-    }).catch(e => {
-        console.log(e)
-    })
+function applyResult(hash) {
+    if (hash) {
+        waitUntilSuccessAsync("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
+            .then((obj) => {
+                deepTMHMM = document.getElementById("transmembrane_topology");
+                deepTMHMM.querySelector("#topology").innerText =
+                    obj["/predicted_topologies.3line"].substr(61);
+                deepTMHMM.querySelector("#statistic").innerText =
+                    obj["/TMRs.gff3"];
+                deepTMHMM.querySelector("#topology_img").src =
+                    "/api/" + hash + "/DeepTMHMM/plot.png";
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+
+        waitUntilSuccessAsync("/api/" + hash + "/JPred", 5000, 500, 80)
+            .then((obj) => {
+                $("#JPred").innerHTML = obj["svg"];
+                [...$$(".title > svg > rect")].map((x) => {
+                    x.style["fill-opacity"] = 0;
+                });
+                $(".align > svg > rect.st1").style["fillOpacity"] = 0;
+                $(".align > svg > rect.st2").style["fillOpacity"] = 0;
+                $(".align > svg").setAttribute("width", $(".align > svg").getAttribute("width") - 50); // svg 的本身宽度，由于右侧有空白进行调整
+                $(".align > svg").setAttribute("height", 217);
+                $(".title").style["width"] = "80px";
+                $(".align").style["overflow"] = "auto";
+                $(".st0").style['display'] = "flex";
+                $(".st0").style.width = window.innerWidth - $(".st0").offsetLeft - 300 + "px"
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+}
+
+(function () {
+    var divs = [...$("#content").children];
+    $$(".leftside .buttons .li")[1].click();
+    divs.map((x) => {
+        x.hidden = true;
+    });
+    divs[1].hidden = false;
+    applyResult(hash);
+})();
+
+

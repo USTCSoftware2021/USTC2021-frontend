@@ -31,7 +31,7 @@ inputBtn.addEventListener("click", () => {
     if (checkSequece(sequence)) {
         saveSequence()
         sendSequence()
-        window.location.href = "../profession-main"
+        window.location.href = "../profession-main" 
     }
 })
 
