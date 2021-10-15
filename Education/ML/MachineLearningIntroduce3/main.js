@@ -43,8 +43,8 @@ SetStep.prototype.init=function(arg){
     var stepP=$("<div class='ystep-progress'>"+
                 "<p class='ystep-progress-bar'><span class='ystep-progress-highlight' style='width:0%'></span></p>"+
             "</div>");
-    var stepButtonHtml =$( "<div class='step-button'><div class='before1' ><button type='button' class='btn btn-default prevBtn change' id='prevBtn' class='prevBtn'><img src='../../../static/arrow-r.png' ></button></div>"+
-                        "<div class='next1' id='abc'><button type='button' class='btn btn-default nextBtn change' id='nextBtn' class='nextBtn'><img src='../../../static/arrow.png' ></img></button></div></div>");
+    var stepButtonHtml =$( "<div class='step-button'><div class='before1' ><button type='button' class='btn btn-default prevBtn change' id='prevBtn' class='prevBtn'><img src='/static/arrow-r.png' ></button></div>"+
+                        "<div class='next1' id='abc'><button type='button' class='btn btn-default nextBtn change' id='nextBtn' class='nextBtn'><img src='/static/arrow.png' ></img></button></div></div>");
     stepP.css('width',w_li*2*(this.opt.stepCounts-1));
     stepP.find('.ystep-progress-bar').css('width',w_li*2*(this.opt.stepCounts-1))
     for(var i=0;i<this.opt.stepCounts;i++){

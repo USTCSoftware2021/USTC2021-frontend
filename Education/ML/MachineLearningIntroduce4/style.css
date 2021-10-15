@@ -243,7 +243,7 @@ body {
 }
 .button1{
     position: absolute;
-    background: url(../../../static/example.png);
+    background: url(/static/example.png);
     background-size:12vw 8vh;
     width: 12vw;
     height: 8vh;
@@ -288,7 +288,7 @@ body {
 }
 .button2{
     position: absolute;
-    background: url(../../../static/confirm.png);
+    background: url(/static/confirm.png);
     background-size:12vw 8vh;
     width: 12vw;
     height: 8vh;
@@ -298,7 +298,7 @@ body {
 }
 .button3{
     position: absolute;
-    background: url(../../../static/end.png);
+    background: url(/static/end.png);
     background-size:12vw 8vh;
     width: 12vw;
     height: 8vh;

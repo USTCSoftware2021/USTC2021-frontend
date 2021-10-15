@@ -341,7 +341,7 @@ input{
   z-index: -1;
 }
 .endbutton{
-  background: url(../../../static/end.png);
+  background: url(/static/end.png);
   margin: 0;
 	background-repeat:no-repeat;
   background-position:0% 0%;
@@ -453,7 +453,7 @@ label.l1 {
 
   
   .card .back {
-    background: "../../../static/card1.png";
+    background: "/static/card1.png";
     color: #FFF;
     -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
@@ -567,16 +567,16 @@ label.l1 {
   
   /*blue css*/
   .ystep-blue .ystep-step-done {
-    background-image: url("../../../static/pointes_blue.png");
+    background-image: url("/static/pointes_blue.png");
     background-repeat: no-repeat;
   }
   .ystep-blue .ystep-step-undone {
-    background-image: url("../../../static/pointes_blue.png");
+    background-image: url("/static/pointes_blue.png");
     background-repeat: no-repeat;
     color: #9c9a9b;
   }
   .ystep-blue .ystep-step-active {
-    background-image: url("../../../static/pointes_blue.png");
+    background-image: url("/static/pointes_blue.png");
     background-repeat: no-repeat;
     color: #3276b1;
   }
