@@ -1,0 +1,232 @@
+body {
+    background-color:#DADADA !important;
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    z-index: -1;
+}
+.bar{
+    position: fixed;
+    display: flex;
+    flex-flow: row;
+    background-color: black;
+    width: 100vw;
+    height: 60px;
+    z-index:100;
+}
+.barword{
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+/* .barword:hover{
+    background-color: red;
+    color: black;
+    cursor: pointer;
+} */
+.barblank{
+    flex-grow: 5;
+}
+.barword a{
+    display: block;
+    color: white;
+    text-decoration:none !important;
+    font-size: 20px;
+}
+.bar #history{
+    margin-right: 30px;
+}
+.bar img{
+    margin: 15px;
+    width: 100px;
+    height: 32px;
+}
+/* four pictures */
+
+.box{
+    position: absolute;
+    width: 85vw;
+    height: 85vh;
+    left: 7.5vw;
+    top: 10vh;
+
+    background: linear-gradient(0deg, #F9EAB6, #F9EAB6), #FFFFFF;
+    border: 8px solid #FFC700;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px 209px rgba(74, 74, 74, 0.48), inset 0px 0px 12px rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    z-index: 0.5;
+    padding: 10px;
+}
+.x {
+    background-color: #91C7C9;
+    border-radius: 10px;
+    margin-top: 10px;
+    align-self: flex-start;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.x:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+.top{
+    display: flex;
+    flex-flow: row;
+    height: 15vh;
+    width: 100%;
+    padding-right: 30px;
+    align-items: center;
+}
+.topblank {
+    flex-grow: 5;
+}
+.middle {
+    height: 48vh;
+}
+.middle img {
+    position: absolute;
+}
+.hint {
+    z-index: 5;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.pen {
+    top: 190px;
+    left: 120px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.pen:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.shrimp {
+    top: 140px;
+    left: 250px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    width: 100px;
+}
+.shrimp:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.bottle {
+    top: 350px;
+    left: 160px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.bottle:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.mutton {
+    top: 400px;
+    left: 310px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.mutton:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.duck {
+    top: 380px;
+    left: 560px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.duck:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.chicken {
+    top: 340px;
+    left: 990px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.chicken:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.pork {
+    top: 130px;
+    left: 600px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.pork:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.beef {
+    top: 150px;
+    left: 900px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.beef:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.1);
+    transition: all 0.2s ease-in-out;
+}
+.bubble1 {
+    top: 220px;
+    left: 1120px;
+}
+.bubble2 {
+    top: 300px;
+    left: 40px;
+}
+.bubble3 {
+    top: 430px;
+    left: 800px;
+}
+.bubble4 {
+    top: 140px;
+    left: 450px;
+}
+.bottom {
+    display: flex;
+    flex-flow: row;
+}
+
+.bottomblank1 {
+    width: 5vw;
+}
+.bottomblank2 {
+    flex-grow: 5;
+}
+.bottomblank3 {
+    width: 8vw;
+}
+.bottom p {
+    font-size: 2vh;
+    margin-right: 200px;
+    margin-top: 80px;
+}
+#img4{
+    opacity: 0.9;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+#img4:hover{
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale(1.05);
+    opacity: 1;
+    transition: all 0.2s ease-in-out;
+}
+.vanish-mode{
+    animation: change-to-vanish 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes change-to-vanish {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}

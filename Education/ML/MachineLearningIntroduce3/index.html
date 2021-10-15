@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script> -->
     <!-- <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
@@ -32,35 +34,115 @@
         </div>
     <!-- </div> -->
     <div class="blank"></div>
+
     <div class="logocolorful">
         <img src="../../../static/cat_colorful.png" id="img4">
     </div>
-    <div class="year">
-        1957-1974
+    <!-- <div class="Before" id="Before">
+        <a href="../../../Education/ML/MachineLearningIntroduce12/index.html"><img src="../../../static/arrow-r.png" ></img></a>
+    </div> -->
+    <div class="stepCont stepCont3">
+        <!-- 菜单导航显示-->
+        <div class='ystep-container ystep-lg ystep-blue'></div>
+        <!-- 分页容器-->
+        <div class="pageCont">
+            <div id="page1" class="stepPage">
+                <div class="year">
+                    1957-1974
+                </div>
+                <div class="word">
+                    AI flourished. 
+                    <br></br>
+                    Computers could store more information and became faster, cheaper, and more accessible. 
+                    <br></br>
+                    Machine learning algorithms also improved and people got better at knowing which algorithm to apply to their problem. 
+                    <br></br>
+                    Connectionism based on Neural network came out, for example <a href="../../../Education/ML/MachineLearningIntroduce4/index.html"><span class="special" >perceptron</span></a>.
+                </br>
+                </div>
+                <div class="vector">
+                    <img src="../../../static/vector.png" id="img5">
+                </div>
+                <div class="click">
+                    <img src="../../../static/click!.png" id="img6">
+                </div>
+            </div>
+            <div id="page2" class="stepPage">
+                <div class="year2">
+                    1970s-1980s
+                </div>
+                <div class="aiwinter">
+                    <img src="../../../static/AI winter.png" id="img7">
+                </div>
+            </div>
+            <div id="page3" class="stepPage">
+                <div class="year3">
+                    1980s-Now
+                </div>
+                <div class="word3">
+                    At the beginning of the 21st century, due to <span class="special3">the progress of computer</span> hardware and <sapn class="special3">the exploration of data in human society</sapn>, AI embraces its new generation, deep learning which is narrowly defined as a neural network with many layers.
+                </br>
+                </div>
+                <div class="hardware">
+                    <img src="../../../static/hardware.png" id="img8">
+                </div>
+                <div class="dataexplode">
+                    <img src="../../../static/dataexplode.png" id="img9">
+                </div>
+            </div>
+            <div id="page4" class="stepPage">
+                <div class="year4">
+                    Type of Models
+                </div>
+                <label class="l1">
+                    <input type="checkbox"  />
+                    <div class="card">
+                        <div class="front" ><img src="../../../static/card1.png" id="img10"></div>
+                        <div class="back"><img src="../../../static/card4.png" id="img17">
+                            <!-- <div class="cardword1">
+                                Given a set of unlabeled data to machine to let it classify it.
+                                For example, pictures of cat and dog without telling the machine its catagory. 
+                            </div> -->
+                        </div>
+                    </div>
+                </label>
+                <label class="l2">
+                    <input type="checkbox"  />
+                    <div class="card">
+                        <div class="front"><img src="../../../static/card2.png" id="img11"></div>
+                        <div class="back"><img src="../../../static/card5.png" id="img10">
+                        </div>
+                    </div>
+                </label>
+                <label class="l3">
+                    <input type="checkbox"  />
+                    <div class="card">
+                        <div class="front"><img src="../../../static/card3.png" id="img12"></div>
+                        <div class="back"><img src="../../../static/card6.png" id="img17"></div>
+                    </div>
+                </label>
+            </div>
+            <div id="page5" class="stepPage">
+                <div class="prosandcons">
+                    <img src="../../../static/prosandcons.png" id="img13">
+                </div>
+                <div class="pazzle">
+                    <img src="../../../static/pazzle.png" id="img14">
+                </div>
+                <div class="end">
+                    <a href="../../../Education/FourModels/index.html"><button class="endbutton"><img src="../../../static/end.png" id="img15"></button></a>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="word">
-        AI flourished. 
-        <br></br>
-        Computers could store more information and became faster, cheaper, and more accessible. 
-        <br></br>
-        Machine learning algorithms also improved and people got better at knowing which algorithm to apply to their problem. 
-        <br></br>
-        Connectionism based on Neural network came out, for example <a href="../../../Education/Machine Learning Introduce 4/index.html"><span class="special" >perceptron</span></a>.
-    </br>
-    </div>
-    <div class="vector">
-        <img src="../../../static/vector.png" id="img5">
-    </div>
-    <div class="click">
-        <img src="../../../static/click.png" id="img6">
-    </div>
-    <div class="before">
-        <a href="../../../Education/Machine Learning Introduce 1 2/index.html"><img src="../../../static/arrow-r.png" ></img></a>
-    </div>
-    <div class="next">
-        <a href="../../../Education/Machine Learning Introduce 3/index.html"><img src="../../../static/arrow.png" ></img></a>
-    </div>
+
+
+
 </body>
-<script src="/utils.js"></script>
 <script src="main.js"></script>
+<script>
+    var step3=new SetStep({
+        content:'.stepCont3'
+    })
+</script>
 </html>

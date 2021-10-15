@@ -33,33 +33,27 @@
     <!-- </div> -->
     <div class="box">
         <div class="top">
-            <img src="../../../static/Isoelectric.svg" id="img2">
+            <img src="../../../static/hiddenmarkovmodel.svg" alt="colorful logo" id="img2">
             <div class="topblank"></div>
-            <img src="../../../static/whitex.svg" alt="x" class="x">
+            <img src="../../../static/whitex.svg" alt="x" class="x" id="x">
         </div>
         <div class="middle">
-            <div class="pros">
-                <img src="../../../static/Isoelectricpros.svg" id="pros">
-                <label>
-                    <p class="labelp">1.Shared convolutional kernels, no pressure on high-dimensional data processing</p>
-                    <p class="labelp">2.Without selecting features by human</p>
-                    <p class="labelp">3.Has great result</p>
-                </label>
-            </div>
-            <div class="cons">
-                <img src="../../../static/Isoelectriccons.svg" id="cons">
-                <label>
-                    <p class="labelp">1.It requires parameter adjustment and large sample size. It is best to train with GPU.</p>
-                    <p class="labelp">2.Don’t have a clear physical meaning.</p> 
-                    <p class="weak">(that is, we don't know what features are extracted from each convolution layer, and the neural network itself is a "black box model" that is difficult to explain)</p>
-                </label>
-            </div>
+            <label class="content" id="content">
+                <p><strong>Hidden Markov Model (HMM)</strong> is a classical machine learning model that has been widely used in the fields of language recognition, natural language processing, and pattern recognition.</p>
+                <p>So what kind of problems can be solved with HMM models?</p>
+                <p>When using HMM models, our problems generally have two characteristics.</p>
+                <p>1. Problem is sequence-based, such as time series, or state sequences.</p>
+                <p>2. There are two types of data in our problem. One type of sequence data is observable, i.e., observation sequences, while the other type of data is not observable, i.e., hidden state sequences, or state sequences for short.</p>
+                <p>Thus, the data are sequential and discrete.</p>
+            </label>
+            
         </div>
         <div class="bottom">
             <div class="bottomblank1"></div>
             <img src="../../../static/CAT-color.svg" alt="colorful logo" id="img1">
             <div class="bottomblank2"></div>
-            <img src="../../../static/secondarystructurenext.svg" alt="colorful logo" id="img4">
+            <img src="../../../static/Secondarystructurehint.svg" class="hint">
+            <img src="../../../static/secondarystructureexample.svg" id="img4">
             <div class="bottomblank3"></div>
         </div>
     </div>

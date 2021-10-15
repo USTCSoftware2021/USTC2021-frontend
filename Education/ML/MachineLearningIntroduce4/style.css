@@ -82,11 +82,11 @@ body {
     z-index: 2;
     display:none;
 }
-input{
+/* input{
     padding-inline-end: 40px;
     padding-inline-start: 60px;
     display:none;
-}
+} */
 /* four pictures */
 #img1 {
     align-items: center;
@@ -116,6 +116,67 @@ input{
     width: 30vw;
     height: 38vh;
 }
+#img7 {
+    width: 10vw;
+    height: 10vh;
+    margin-left: -2vw;
+}
+#img8{
+    width: 12vw;
+    height: 8vh;
+}
+#img9{
+    width: 20vw;
+    height: 40vh;
+}
+#img10{
+    width: 30vw;
+    height: 55vh;
+}
+#img11{
+    width: 15vw;
+    height: 5vh;
+}
+#img12{
+    width: 45vw;
+    height: 35vh;
+}
+#img13{
+    width: 18vw;
+    height: 24vh;
+}
+#img14{
+    width: 20vw;
+    height: 8vh;
+}
+#img15{
+    width: 30vw;
+    height: 60vh;
+}
+#img16{
+    width: 14vw;
+    height: 20vh;
+}
+#img17{
+    width: 5vw;
+    height: 15vh;
+}
+#img18{
+    width: 0.7vw;
+    height: 1.8vh;
+}
+#img19{
+    width: 0.7vw;
+    height: 1.8vh;
+}
+#img20{
+    width: 0.7vw;
+    height: 1.8vh;
+}
+#img21{
+    width: 0.7vw;
+    height: 1.8vh;
+}
 .logocolorful{
     position: absolute;
     left: 12vw;
@@ -144,9 +205,193 @@ input{
     z-index: 100;
     position: absolute;
     width: 40vw;
-    height: 80vh;
+    height: 40vh;
     left: 15vw;
     top: 35vh;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 2vmin;
+    line-height: 2vmin;
+    text-align: center;
+    letter-spacing: 0.05em;
+    font-feature-settings: 'pnum' on, 'onum' on, 'liga' off;
+    /* overflow: hidden; */
+
+    color: rgba(43, 33, 33, 0.8);
+}
+.pic{
+    position: absolute;
+    left: 60vw;
+    top: 30vh;
+}
+.back{
+    position: absolute;
+    left: 82vw;
+    top: 15vh; 
+    width: 6vw;
+    height: 10vh;
+    background: linear-gradient(0deg, rgba(145, 199, 201, 0.6), rgba(145, 199, 201, 0.6)), #FFFFFF;
+    border-radius: 10px;
+}
+.example{
+    position: absolute;
+    left: 75vw;
+    top: 80vh;
+    opacity: 1;
+}
+.button1{
+    position: absolute;
+    background: url(../../../static/example.png);
+    background-size:12vw 8vh;
+    width: 12vw;
+    height: 8vh;
+    border-radius: 2vmin;
+    border: black;
+    box-shadow: darkgrey 5px 5px 0px 0px;
+}
+.fruits{
+    position: absolute;
+    left: 15vw;
+    top: 40vh;
+    z-index: 1;
+}
+.rec1{
+    position: absolute;
+    left: 10vw;
+    top: 30vh;
+}
+.sweet{
+    position: absolute;
+    left: 21vw;
+    top: 33vh;
+    z-index: 1;
+}
+.rec2{
+    position: absolute;
+    left: 43vw;
+    top: 30vh;
+}
+#page2{
+    display: none;
+}
+.picture{
+    position: absolute;
+    left: 65vw;
+    top: 35vh;
+}
+.goodorbad{
+    position: absolute;
+    left: 45vw;
+    top: 43vh;
+}
+.button2{
+    position: absolute;
+    background: url(../../../static/confirm.png);
+    background-size:12vw 8vh;
+    width: 12vw;
+    height: 8vh;
+    border-radius: 2vmin;
+    border: black;
+    box-shadow: darkgrey 5px 5px 0px 0px;
+}
+.button3{
+    position: absolute;
+    background: url(../../../static/end.png);
+    background-size:12vw 8vh;
+    width: 12vw;
+    height: 8vh;
+    border-radius: 2vmin;
+    border: black;
+    box-shadow: darkgrey 5px 5px 0px 0px;
+}
+.range{
+    position: absolute;
+    left: 45vw;
+    top: 76vh;
+    width: 25vw;
+    height: 20vh;
+    z-index:100;
+}
+input[type=range] {
+    -webkit-appearance: none;
+    width: 500px;
+    border-radius: 10px; /*这个属性设置使填充进度条时的图形为圆角*/
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+} 
+input[type=range]::-webkit-slider-runnable-track {
+    height: 2px;
+    border-radius: 10px; /*将轨道设为圆角的*/
+    box-shadow: 0 0px 0px #82D0C3, inset 0 .125em .125em #82D0C3; /*轨道内置阴影效果*/
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    margin-top: -9px; /*使滑块超出轨道部分的偏移量相等*/
+    background: #82D0C3; 
+    border-radius: 50%; /*外观设置为圆形*/
+    border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+    box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+}
+.inactive {
+    opacity: 0.4;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+#Range{
+    display: none;
+}
+#page3{
+    display: none;
+}
+.rec3{
+    position: absolute;
+    left: 10vw;
+    top: -5vh;
+}
+.watermelon{
+    position: absolute;
+    left: 12vw;
+    top: 32vh;
+}
+.stg{
+    position: absolute;
+    left: 27vw;
+    top: 34vh;
+}
+.eight{
+    position: absolute;
+    left: 34vw;
+    top: 34.5vh;
+}
+.two{
+    position: absolute;
+    left: 34vw;
+    top: 40.5vh;
+}
+.G{
+    position: absolute;
+    left: 34vw;
+    top: 46.5vh;
+}
+.B{
+    position: absolute;
+    left: 34vw;
+    top: 46.5vh;
+}
+.word2{
+    position: absolute;
+    width: 30vw;
+    height: 10vh;
+    left: 10vw;
+    top: 57vh;
 
     font-family: Roboto;
     font-style: normal;
@@ -158,9 +403,25 @@ input{
     font-feature-settings: 'pnum' on, 'onum' on, 'liga' off;
 
     color: rgba(0, 0, 0, 0.8);
+
 }
-.pic{
+.value{
     position: absolute;
-    left: 60vw;
-    top: 30vh;
+    left: 72vw;
+    top: 75vh;
+    height: 20vh;
+    width: 25vw;
+}
+.ww{
+    position: absolute;
+    left: 42.5vw;
+    top: 75vh;
+    height: 20vh;
+    width: 25vw;
+}
+#game{
+    display: none;
+}
+input:hover{
+    cursor: pointer;
 }
