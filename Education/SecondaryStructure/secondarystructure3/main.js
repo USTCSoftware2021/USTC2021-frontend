@@ -1,6 +1,12 @@
 var barWord = document.getElementsByClassName("barword")
 var barWordA = document.getElementsByClassName("barworda")
 var img4 = document.getElementById("img4")
+var vanishes = document.getElementsByClassName("vanish")
+var shrimp = document.getElementById("shrimp")
+
+shrimp.addEventListener("click", () => {
+    window.location.href = "../secondarystructure4/index.html"
+})
 img4.addEventListener("click", () => {
     window.location.href = "../secondarystructure4/index.html"
 })
@@ -36,5 +42,11 @@ console.log(WrongAnswers)
 for(let i = 0; i < 7; i++){
     WrongAnswers[i].addEventListener("click", () => {
         alert("Wrong answer!")
+    })
+}
+
+for(let i = 0; i < vanishes.length; i++){
+    vanishes[i].addEventListener("click", () => {
+        vanishes[i].classList.add("vanish-mode");
     })
 }

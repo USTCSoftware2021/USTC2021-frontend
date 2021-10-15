@@ -228,3 +228,11 @@ body {
     opacity: 1;
     transition: all 0.2s ease-in-out;
 }
+.vanish-mode{
+    animation: change-to-vanish 1s;
+    animation-fill-mode: forwards;
+}
+@keyframes change-to-vanish {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}

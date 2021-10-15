@@ -6,7 +6,7 @@ document.getElementById("btn1").onclick=function(){
     document.getElementById("game").style.display= "inline";
 };
 
-
+var confirm = document.getElementById("btn22")
 var n=0;
 var v1,v2,v3;
 function change() {
@@ -56,4 +56,8 @@ document.getElementById("btn2").onclick=function(){
     if(v1*8+v2*2>v3){
         document.getElementById("img20").style.display= "none";
     }
+    document.getElementById("range1").disabled= "true";
+    document.getElementById("range2").disabled= "true";
+    document.getElementById("range3").disabled= "true";
 };
+

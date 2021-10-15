@@ -1,6 +1,8 @@
 var barWord = document.getElementsByClassName("barword")
 var barWordA = document.getElementsByClassName("barworda")
 var img4 = document.getElementById("img4")
+var vanishes = document.getElementsByClassName("vanish")
+
 img4.addEventListener("click", () => {
     window.location.href = "../secondarystructure3/index.html"
 })
@@ -31,3 +33,8 @@ for(let i = 0; i < 4; i++){
     })
 }
     
+for(let i = 0; i < vanishes.length; i++){
+    vanishes[i].addEventListener("click", () => {
+        vanishes[i].classList.add("vanish-mode");
+    })
+}
