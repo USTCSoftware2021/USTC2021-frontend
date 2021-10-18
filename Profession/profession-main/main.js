@@ -1,6 +1,5 @@
 var $ = (x) => document.querySelector(x);
 var $$ = (x) => document.querySelectorAll(x);
-var content = $("#content");
 
 var SVGs = {
     plant: null,
@@ -190,7 +189,7 @@ function manageSVG() {
         "load",
         () => {
             SVGs.plant = $("#plant_cell").getSVGDocument();
-            hideAll(plant.cls, SVGs.plant);
+            hideAllClassOfSVG(plant.cls, SVGs.plant);
             loadCellPLoc();
         },
         false
@@ -199,14 +198,14 @@ function manageSVG() {
         "load",
         () => {
             SVGs.hum = $("#hum_cell").getSVGDocument();
-            hideAll(hum.cls, SVGs.hum);
+            hideAllClassOfSVG(hum.cls, SVGs.hum);
             loadCellPLoc();
         },
         false
     );
 }
 
-function hideAll(cls, svg) {
+function hideAllClassOfSVG(cls, svg) {
     cls.map((c) => {
         [...svg.querySelectorAll("." + c)].map((elem) => {
             elem.setAttribute("visibility", "hidden");
@@ -220,17 +219,13 @@ function showClass(c, svg) {
     });
 }
 
-// function change(e) {
-//     e.target.value =
-// }
-
 (function () {
     var divs = [...$("#content").children];
     $$(".leftside .buttons .li")[1].click();
     divs.map((x) => {
         x.hidden = true;
     });
-    divs[1].hidden = false;
+    divs[0].hidden = false;
     manageSVG();
     applyResult(hash);
 })();

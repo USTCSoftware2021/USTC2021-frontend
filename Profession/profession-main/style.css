@@ -89,7 +89,7 @@ body {
     display: flex;
     flex-flow: column;
     align-items: center;
-    width: 100%;
+    width: 98%;
     height: auto;
 }
 
@@ -137,6 +137,26 @@ body {
     flex-grow: 1;
 }
 
+.text-brace .head {
+    font-size: large;
+    font-weight: bold;
+}
+
+.text-brace .major {
+    font-size: larger;
+}
+
+.text-brace {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 40px;
+}
+
+.text-brace .minor {
+    margin-top: -10px;
+    font-size: smaller;
+}
+
 #prot_source {
     background: #ffffff;
     height: 28px;
@@ -163,7 +183,7 @@ body {
 }
 
 .result {
-    width: 100%;
+    width: 98%;
     height: auto;
     display: flex;
     flex-flow: column;
