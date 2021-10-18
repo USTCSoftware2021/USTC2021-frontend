@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 </head>
+
 <body>
     <!-- <div class="bar"> -->
     <div class="bar">
@@ -15,7 +18,7 @@
             <img src="/static/CAT-white.png"></img>
         </div>
         <div class="barword">
-            <a class="barworda" href="/Profession/profession-index">Profession</a>                
+            <a class="barworda" href="/Profession/profession-index">Profession</a>
         </div>
         <div class="barword">
             <a class="barworda" href="">Education</a>
@@ -40,9 +43,12 @@
         <div id="secondary_structure" class="content">
             <h1 class="model-title">Secondary Structure</h1>
             <p class="by">By JPred</p>
-            <div id="JPred">
-                <!-- JPred fulfillment -->
+            <div class="result" hidden>
+                <div id="JPred">
+                    <!-- JPred fulfillment -->
+                </div>
             </div>
+            <img class="waiting" src="/static/cat.gif" />
             <div class="strentch"></div>
             <div class="ref">
                 <p>Reference: </p>
@@ -54,7 +60,7 @@
             <p class="by">By Cell-PLoc 2.0</p>
             <div class="choice">
                 <p target="prot_source">Choose the source of the protein sequence: </p>
-                <select id="prot_source">
+                <select id="prot_source" onchange="loadSVG(event)">
                     <option value="">select the source</option>
                     <option value="euk">eukaryotic</option>
                     <option value="hum">human</option>
@@ -62,8 +68,11 @@
                     <option value="gpos">Gram-positive</option>
                     <option value="gneg">Gram-negative</option>
                 </select>
-                <div id="loc_picture"></div>
             </div>
+            <div class="result" hidden>
+                <embed src="/static/plant_cell.svg" id="plant_cell">
+            </div>
+            <img class="waiting" src="/static/cat.gif" />
             <div class="strentch"></div>
             <div class="ref">
                 <p>Reference: </p>
@@ -74,9 +83,16 @@
         <div id="transmembrane_topology" class="content">
             <h1 class="model-title">Transmembrane Topology</h1>
             <p class="by">By Biolib | DeepTMHMM</p>
-            <p id="topology" class="text"></p>
-            <p id="statistic" class="text"></p>
-            <img id="topology_img" />
+            <div class="result" hidden>
+                <div class="text-wrapper">
+                    <p id="topology" class="text"></p>
+                </div>
+                <div class="text-wrapper">
+                    <p id="statistic" class="text"></p>
+                </div>
+                <img id="topology_img" />
+            </div>
+            <img class="waiting" src="/static/cat.gif" />
             <div class="strentch"></div>
             <div class="ref">
                 <p>Reference: </p>
@@ -86,6 +102,12 @@
         <div id="isoelectric_point" class="content">
             <h1 class="model-title">Isoelectric Point</h1>
             <p class="by">By Isoelectric Point Calculator 2.0 </p>
+            <div class="result" hidden>
+                <div class="text-wrapper">
+                    <p>The isoelectric point of sequence is: <span id="isopoint"></span></p>
+                </div>
+            </div>
+            <img class="waiting" src="/static/cat.gif" />
             <div class="strentch"></div>
             <div class="ref">
                 <p>Reference: </p>
@@ -97,4 +119,5 @@
 <script src="/utils.js"></script>
 <script src="main.js"></script>
 <!-- name from four models -->
+
 </html>

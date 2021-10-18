@@ -2,6 +2,43 @@ var $ = (x) => document.querySelector(x);
 var $$ = (x) => document.querySelectorAll(x);
 var content = $("#content");
 
+var SVGs = {
+    plant: null,
+    hum: null,
+    eukaryotic: null,
+    gneg: null,
+    gpos: null,
+};
+
+var plant = {
+    cls: [
+        "Extracell",
+        "Cytoplasm",
+        "CellWall",
+        "Plasma_Membrane",
+        "Nucleus",
+        "Mitochondria",
+        "EndoplasmicReticulum",
+        "Chloroplast",
+        "Peroxisome",
+        "Vacuole",
+        "Plastid",
+    ],
+    re: [
+        /Extracell/i,
+        /Cytoplasm/i,
+        /wall/i,
+        /membrane/i,
+        /nucleus/i,
+        /Mitochondria/i,
+        /Reticulum/i,
+        /Chloroplast/i,
+        /Peroxisome/i,
+        /Vacuole/i,
+        /Plastid/i,
+    ],
+};
+
 var hash = localStorage.getItem("hash");
 
 // waitUntilSuccess("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
@@ -31,13 +68,15 @@ function applyResult(hash) {
     if (hash) {
         waitUntilSuccessAsync("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
             .then((obj) => {
-                deepTMHMM = document.getElementById("transmembrane_topology");
+                $("#transmembrane_topology > .waiting").hidden = true;
+                deepTMHMM = $("#transmembrane_topology");
                 deepTMHMM.querySelector("#topology").innerText =
                     obj["/predicted_topologies.3line"].substr(61);
                 deepTMHMM.querySelector("#statistic").innerText =
                     obj["/TMRs.gff3"];
                 deepTMHMM.querySelector("#topology_img").src =
                     "/api/" + hash + "/DeepTMHMM/plot.png";
+                $("#transmembrane_topology > .result").hidden = false;
             })
             .catch((err) => {
                 console.log(err);
@@ -45,24 +84,84 @@ function applyResult(hash) {
 
         waitUntilSuccessAsync("/api/" + hash + "/JPred", 5000, 500, 80)
             .then((obj) => {
+                $("#secondary_structure > .waiting").hidden = true;
                 $("#JPred").innerHTML = obj["svg"];
                 [...$$(".title > svg > rect")].map((x) => {
                     x.style["fill-opacity"] = 0;
                 });
                 $(".align > svg > rect.st1").style["fillOpacity"] = 0;
                 $(".align > svg > rect.st2").style["fillOpacity"] = 0;
-                $(".align > svg").setAttribute("width", $(".align > svg").getAttribute("width") - 50); // svg 的本身宽度，由于右侧有空白进行调整
+                $(".align > svg").setAttribute(
+                    "width",
+                    $(".align > svg").getAttribute("width") - 50
+                ); // svg 的本身宽度，由于右侧有空白进行调整
                 $(".align > svg").setAttribute("height", 217);
                 $(".title").style["width"] = "80px";
                 $(".align").style["overflow"] = "auto";
-                $(".st0").style['display'] = "flex";
-                $(".st0").style.width = window.innerWidth - $(".st0").offsetLeft - 300 + "px"
+                $(".st0").style["display"] = "flex";
+                $(".st0").style.width =
+                    window.innerWidth - $(".st0").offsetLeft - 300 + "px";
+                $("#secondary_structure > .result").hidden = false;
             })
             .catch((err) => {
                 console.log(err);
             });
+        waitUntilSuccessAsync("/api/" + hash + "/IPC2", 5000, 500, 80).then(
+            (obj) => {
+                $("#isoelectric_point > .waiting").hidden = true;
+                $("#isopoint").innerText = obj["protein"]["protein"];
+                $("#isoelectric_point > .result").hidden = false;
+            }
+        );
+        waitUntilSuccessAsync("/api/" + hash + "/CellPLoc", 5000, 500, 80).then(
+            (obj) => {
+                $("#subcellular_localization > .waiting").hidden = true;
+                if ($("select").value) {
+                    loadSVG(obj);
+                }
+                $("#subcellular_localization > .result").hidden = false;
+            }
+        );
     }
 }
+
+function loadSVG(obj) {
+    var cell = $("select").value;
+    eval(cell).re.map((re, index) => {
+        if (re.test(obj[cell])) {
+            showClass(eval(cell).cls[index]);
+        }
+    });
+}
+
+function manageSVG() {
+    $("#plant_cell").addEventListener(
+        "load",
+        () => {
+            SVGs.plant = $("#plant_cell").getSVGDocument();
+            hideAll(plant.cls, SVGs.plant);
+        },
+        false
+    );
+}
+
+function hideAll(cls, svg) {
+    cls.map((c) => {
+        [...svg.querySelectorAll("." + c)].map((elem) => {
+            elem.setAttribute("visibility", "hidden");
+        });
+    });
+}
+
+function showClass(c, svg) {
+    [...svg.querySelectorAll("." + c)].map((elem) => {
+        elem.removeAttribute("visibility");
+    });
+}
+
+// function change(e) {
+//     e.target.value =
+// }
 
 (function () {
     var divs = [...$("#content").children];
@@ -71,7 +170,6 @@ function applyResult(hash) {
         x.hidden = true;
     });
     divs[1].hidden = false;
+    manageSVG();
     applyResult(hash);
 })();
-
-
