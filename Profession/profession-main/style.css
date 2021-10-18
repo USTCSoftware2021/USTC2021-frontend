@@ -114,10 +114,6 @@ body {
     margin-bottom: 30px;
 }
 
-.cell {
-    /* zoom: 0.28; */
-}
-
 .cell-hidden {
     display: none;
 }

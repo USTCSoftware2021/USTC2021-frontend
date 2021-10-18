@@ -15,7 +15,7 @@ var plant = {
         "Extracell",
         "Cytoplasm",
         "CellWall",
-        "Plasma_Membrane",
+        "PlasmaMembrane",
         "Nucleus",
         "Mitochondria",
         "EndoplasmicReticulum",
@@ -36,6 +36,43 @@ var plant = {
         /Peroxisome/i,
         /Vacuole/i,
         /Plastid/i,
+    ],
+};
+
+var hum = {
+    cls: [
+        "Extracell",
+        "Cytoplasm",
+        "PlasmaMembrane",
+        "Synapse",
+        "Nucleus",
+        "Mitochondria",
+        "EndoplasmicReticulum",
+        "Peroxisome",
+        "Plastid",
+        "Cytoskeleton",
+        "Lysosome",
+        "GolgiApparatus",
+        "Microsome",
+        "Centriole",
+        "Endosomal",
+    ],
+    re: [
+        /Extracell/i,
+        /Cytoplasm/i,
+        /PlasmaMembrane/i,
+        /Synapse/i,
+        /Nucleus/i,
+        /Mitochondria/i,
+        /EndoplasmicReticulum/i,
+        /Peroxisome/i,
+        /Plastid/i,
+        /Cytoskeleton/i,
+        /Lysosome/i,
+        /GolgiApparatus/i,
+        /Microsome/i,
+        /Centriole/i,
+        /Endosomal/i,
     ],
 };
 
@@ -134,6 +171,7 @@ function loadCellPLoc() {
             }
         );
     } else {
+        $("#subcellular_localization > .waiting").hidden = true;
         $("#" + $("select").value + "_cell").classList.remove("cell-hidden");
     }
 }
@@ -144,6 +182,15 @@ function manageSVG() {
         () => {
             SVGs.plant = $("#plant_cell").getSVGDocument();
             hideAll(plant.cls, SVGs.plant);
+            loadCellPLoc();
+        },
+        false
+    );
+    $("#hum_cell").addEventListener(
+        "load",
+        () => {
+            SVGs.hum = $("#hum_cell").getSVGDocument();
+            hideAll(hum.cls, SVGs.hum);
             loadCellPLoc();
         },
         false
