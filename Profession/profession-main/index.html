@@ -60,7 +60,7 @@
             <p class="by">By Cell-PLoc 2.0</p>
             <div class="choice">
                 <p target="prot_source">Choose the source of the protein sequence: </p>
-                <select id="prot_source" onchange="loadSVG(event)">
+                <select id="prot_source" onchange="loadCellPLoc(event)">
                     <option value="">select the source</option>
                     <option value="euk">eukaryotic</option>
                     <option value="hum">human</option>
@@ -69,8 +69,8 @@
                     <option value="gneg">Gram-negative</option>
                 </select>
             </div>
-            <div class="result" hidden>
-                <embed src="/static/plant_cell.svg" id="plant_cell">
+            <div class="result" style="min-height: 0;">
+                <embed src="/static/plant_cell.svg" id="plant_cell" class="cell cell-hidden">
             </div>
             <img class="waiting" src="/static/cat.gif" />
             <div class="strentch"></div>

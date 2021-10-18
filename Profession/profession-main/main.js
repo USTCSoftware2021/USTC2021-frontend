@@ -113,25 +113,29 @@ function applyResult(hash) {
                 $("#isoelectric_point > .result").hidden = false;
             }
         );
-        waitUntilSuccessAsync("/api/" + hash + "/CellPLoc", 5000, 500, 80).then(
-            (obj) => {
-                $("#subcellular_localization > .waiting").hidden = true;
-                if ($("select").value) {
-                    loadSVG(obj);
-                }
-                $("#subcellular_localization > .result").hidden = false;
-            }
-        );
+        loadCellPLoc();
     }
 }
 
-function loadSVG(obj) {
-    var cell = $("select").value;
-    eval(cell).re.map((re, index) => {
-        if (re.test(obj[cell])) {
-            showClass(eval(cell).cls[index]);
-        }
-    });
+function loadCellPLoc() {
+    if (SVGs[$("select").value]) {
+        waitUntilSuccessAsync("/api/" + hash + "/CellPLoc", 5000, 500, 80).then(
+            (obj) => {
+                if ($("select").value) {
+                    $("#subcellular_localization > .waiting").hidden = true;
+                    var cell = $("select").value;
+                    eval(cell).re.map((re, index) => {
+                        if (re.test(obj[cell])) {
+                            showClass(eval(cell).cls[index], SVGs[cell]);
+                        }
+                    });
+                    SVGs[cell].classList.remove("cell-hidden");
+                }
+            }
+        );
+    } else {
+        $("#" + $("select").value + "_cell").classList.remove("cell-hidden");
+    }
 }
 
 function manageSVG() {
@@ -140,6 +144,7 @@ function manageSVG() {
         () => {
             SVGs.plant = $("#plant_cell").getSVGDocument();
             hideAll(plant.cls, SVGs.plant);
+            loadCellPLoc();
         },
         false
     );
