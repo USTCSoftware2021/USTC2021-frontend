@@ -115,7 +115,7 @@ body {
 }
 
 .cell {
-    zoom: 0.28;
+    /* zoom: 0.28; */
 }
 
 .cell-hidden {
