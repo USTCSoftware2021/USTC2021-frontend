@@ -62,7 +62,7 @@ var hum = {
         /PlasmaMembrane/i,
         /Synapse/i,
         /Nucleus/i,
-        /Mitochondria/i,
+        /Mitochondrion/i,
         /EndoplasmicReticulum/i,
         /Peroxisome/i,
         /Plastid/i,
@@ -221,7 +221,7 @@ function showClass(c, svg) {
 
 (function () {
     var divs = [...$("#content").children];
-    $$(".leftside .buttons .li")[1].click();
+    $$(".leftside .buttons .li")[0].click();
     divs.map((x) => {
         x.hidden = true;
     });
