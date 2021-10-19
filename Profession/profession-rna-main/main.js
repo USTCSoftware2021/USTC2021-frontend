@@ -23,7 +23,7 @@ function applyResult(hash) {
 
 (function () {
     var divs = [...$("#content").children];
-    $$(".leftside .buttons .li")[1].click();
+    $$(".leftside .buttons .li")[0].click();
     divs.map((x) => {
         x.hidden = true;
     });

@@ -77,7 +77,7 @@ var hum = {
 
 var hash = localStorage.getItem("hash");
 
-// waitUntilSuccess("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
+// waitUntilSuccess("/api/" + hash + "/DeepTMHMM/", 5000, 500, 80)
 //     .then((res) => {
 //         content.innerHTML = "<img src='" + '/api/' + hash + "/DeepTMHMM/plot.png" + "'>"
 //         console.log(res)
@@ -102,7 +102,7 @@ function sidebarClickHandler(e) {
 
 function applyResult(hash) {
     if (hash) {
-        waitUntilSuccessAsync("/api/" + hash + "/DeepTMHMM", 5000, 500, 80)
+        waitUntilSuccessAsync("/api/" + hash + "/DeepTMHMM/", 5000, 500, 80)
             .then((obj) => {
                 $("#transmembrane_topology > .waiting").hidden = true;
                 deepTMHMM = $("#transmembrane_topology");
@@ -118,7 +118,7 @@ function applyResult(hash) {
                 console.log(err);
             });
 
-        waitUntilSuccessAsync("/api/" + hash + "/JPred", 5000, 500, 80)
+        waitUntilSuccessAsync("/api/" + hash + "/JPred/", 5000, 500, 80)
             .then((obj) => {
                 $("#secondary_structure > .waiting").hidden = true;
                 $("#JPred").innerHTML = obj["svg"];
@@ -142,30 +142,27 @@ function applyResult(hash) {
             .catch((err) => {
                 console.log(err);
             });
-        waitUntilSuccessAsync("/api/" + hash + "/IPC2", 5000, 500, 80).then(
+        waitUntilSuccessAsync("/api/" + hash + "/IPC2/", 5000, 500, 80).then(
             (obj) => {
                 $("#isoelectric_point > .waiting").hidden = true;
                 $("#isopoint").innerText = obj["protein"]["protein"];
                 $("#isoelectric_point > .result").hidden = false;
             }
         );
-        loadCellPLoc();
+        // loadCellPLoc();
     }
 }
 
-function loadCellPLoc() {
-    waitUntilSuccessAsync("/api/" + hash + "/CellPLoc", 5000, 500, 80).then(
+function loadCellPLoc(cell) {
+    waitUntilSuccessAsync("/api/" + hash + "/CellPLoc/", 5000, 500, 80).then(
         (obj) => {
-            if ($("select").value) {
-                $("#subcellular_localization > .waiting").hidden = true;
-                var cell = $("select").value;
-                eval(cell).re.map((re, index) => {
-                    if (re.test(obj[cell])) {
-                        showClass(eval(cell).cls[index], SVGs[cell]);
-                    }
-                });
-                SVGs[cell].classList.remove("cell-hidden");
-            }
+            $("#subcellular_localization > .waiting").hidden = true;
+            eval(cell).re.map((re, index) => {
+                if (re.test(obj[cell])) {
+                    showClass(eval(cell).cls[index], SVGs[cell]);
+                }
+            });
+            SVGs[cell].classList.remove("cell-hidden");
         }
     );
 }
@@ -190,7 +187,7 @@ function manageSVG() {
         () => {
             SVGs.plant = $("#plant_cell").getSVGDocument();
             hideAllClassOfSVG(plant.cls, SVGs.plant);
-            loadCellPLoc();
+            loadCellPLoc("plant");
         },
         false
     );
@@ -199,7 +196,7 @@ function manageSVG() {
         () => {
             SVGs.hum = $("#hum_cell").getSVGDocument();
             hideAllClassOfSVG(hum.cls, SVGs.hum);
-            loadCellPLoc();
+            loadCellPLoc("hum");
         },
         false
     );

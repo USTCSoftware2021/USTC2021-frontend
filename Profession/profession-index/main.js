@@ -31,7 +31,6 @@ inputBtn.addEventListener("click", () => {
     if (checkSequece(sequence)) {
         saveSequence()
         sendSequence()
-        window.location.href = "../profession-main" 
     }
 })
 
@@ -62,6 +61,7 @@ function sendSequence(){
     })
         .then(data => {
             localStorage.setItem("hash", data.hash)
+            window.location.href = "../profession-main" 
         })
         .catch(error => console.error(error))
 }

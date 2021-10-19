@@ -25,40 +25,17 @@ for (let i = 0; i < 4; i++) {
     })
 }
 
-
-inputBtn.addEventListener("click", () => {
-    var sequence  = input.value.toUpperCase()
-    if (checkSequece(sequence)) {
-        saveSequence()
-        sendSequence()
-        window.location.href = "../profession-main" 
+function saveRNA(){
+    if (checkSequece(input.value)) {
+        localStorage.setItem("RNA", input.value)
     }
-})
-
-function saveSequence(){
-    saveinput = JSON.parse(localStorage.getItem("cards"))
-    if (saveinput) {
-        saveinput.push(input.value)
-    }
-    localStorage.setItem("cards", JSON.stringify(saveinput))
 }
 
 function checkSequece(sequence){
-    return /^[ACDEFGHIKLMNPQRSTUVWY\s]+$/i.test(sequence)
+    return /^[ACGTU]{1,100}$/i.test(sequence)
 }
 
-function sendSequence(){
-    postData('/api', {
-        sequence: input.value,
-        tasks: {
-            CellPLoc: true,
-            DeepTMHMM: true,
-            JPred: true,
-            IPC2: true
-        }
-    })
-        .then(data => {
-            localStorage.setItem("hash", data.hash)
-        })
-        .catch(error => console.error(error))
+function go() { 
+    saveRNA()
+    window.location.href = "../profession-rna-main/"
 }
