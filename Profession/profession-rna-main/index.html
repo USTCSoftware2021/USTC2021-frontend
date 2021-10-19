@@ -34,9 +34,6 @@
     <nav class="leftside">
         <ul class="buttons" id="buttons">
             <li class="li" onclick="sidebarClickHandler(event)">Secondary Structure</li>
-            <li class="li" onclick="sidebarClickHandler(event)">Subcellular Localization</li>
-            <li class="li" onclick="sidebarClickHandler(event)">Transmembrane Topology</li>
-            <li class="li" onclick="sidebarClickHandler(event)">Isoelectric Point</li>
         </ul>
     </nav>
     <div id="content">
@@ -85,66 +82,6 @@
             <div class="ref">
                 <p>Reference: </p>
                 <a class="ref-link">http://www.compbio.dundee.ac.uk/jpred4/index.html</a>
-            </div>
-        </div>
-        <div id="subcellular_localization" class="content">
-            <h1 class="model-title">Subcellular Localization</h1>
-            <p class="by">By Cell-PLoc 2.0</p>
-            <div class="choice">
-                <p target="prot_source">Choose the source of the protein sequence: </p>
-                <select id="prot_source" onchange="showUniqueCellPLoc()">
-                    <option value="">select the source</option>
-                    <option value="euk">eukaryotic</option>
-                    <option value="hum">human</option>
-                    <option value="plant">plant</option>
-                    <option value="gpos">Gram-positive</option>
-                    <option value="gneg">Gram-negative</option>
-                </select>
-            </div>
-            <div class="result" style="min-height: 0;">
-                <embed src="/static/plant_cell.svg" id="plant_cell" class="cell cell-hidden">
-                <embed src="/static/hum_cell.svg" id="hum_cell" class="cell cell-hidden">
-            </div>
-            <img class="waiting" src="/static/cat.gif" />
-            <div class="strentch"></div>
-            <div class="ref">
-                <p>Reference: </p>
-                <a class="ref-link">http://www.csbio.sjtu.edu.cn/bioinf/Cell-PLoc/</a>
-            </div>
-            <div id="CellPLoc_picture"></div>
-        </div>
-        <div id="transmembrane_topology" class="content">
-            <h1 class="model-title">Transmembrane Topology</h1>
-            <p class="by">By Biolib | DeepTMHMM</p>
-            <div class="result" hidden>
-                <div class="text-wrapper">
-                    <p id="topology" class="text"></p>
-                </div>
-                <div class="text-wrapper">
-                    <p id="statistic" class="text"></p>
-                </div>
-                <img id="topology_img" />
-            </div>
-            <img class="waiting" src="/static/cat.gif" />
-            <div class="strentch"></div>
-            <div class="ref">
-                <p>Reference: </p>
-                <a class="ref-link">https://biolib.com/DTU/DeepTMHMM</a>
-            </div>
-        </div>
-        <div id="isoelectric_point" class="content">
-            <h1 class="model-title">Isoelectric Point</h1>
-            <p class="by">By Isoelectric Point Calculator 2.0 </p>
-            <div class="result" hidden>
-                <div class="text-wrapper">
-                    <p>The isoelectric point of sequence is: <span id="isopoint"></span></p>
-                </div>
-            </div>
-            <img class="waiting" src="/static/cat.gif" />
-            <div class="strentch"></div>
-            <div class="ref">
-                <p>Reference: </p>
-                <a class="ref-link">http://ipc2.mimuw.edu.pl/</a>
             </div>
         </div>
     </div>

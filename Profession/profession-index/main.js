@@ -36,8 +36,11 @@ inputBtn.addEventListener("click", () => {
 })
 
 function saveSequence(){
-    saveinput = JSON.parse(localStorage.getItem("cards"))
+    var saveinput = JSON.parse(localStorage.getItem("cards"))
     if (saveinput) {
+        saveinput.push(input.value)
+    } else {
+        saveinput = []
         saveinput.push(input.value)
     }
     localStorage.setItem("cards", JSON.stringify(saveinput))
