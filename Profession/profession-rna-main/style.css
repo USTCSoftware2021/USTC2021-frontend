@@ -1,5 +1,5 @@
 body {
-    background-color: #f1ede1 !important;
+    background-color: #e6f7e4 !important;
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -51,7 +51,7 @@ body {
     align-self: flex-start;
     width: 200px;
     height: 100vh;
-    background-color: #ddd6c0;
+    background-color: #bde18a;
 }
 .leftside .buttons {
     position: absolute;
@@ -73,10 +73,10 @@ body {
 }
 .buttons > li:hover {
     cursor: pointer;
-    background-color: #ecdba5;
+    background-color: #7ae994;
 }
 .buttons > li.clicked {
-    background-color: #ecdba5;
+    background-color: #7ae994;
 }
 #content {
     margin-top: 70px;
