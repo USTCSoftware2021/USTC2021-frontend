@@ -54,8 +54,8 @@ body {
     height: 85vh;
     left: 7.5vw;
     top: 10vh;
-    background: #CDE4E4;
-    border: 8px solid #24AACB;
+    background: #F9E2C4;
+    border: 8px solid #FF9E45;
     box-sizing: border-box;
     box-shadow: 0px 4px 4px 209px rgba(74, 74, 74, 0.48), inset 0px 0px 12px rgba(255, 255, 255, 0.25);
     border-radius: 30px;
@@ -66,6 +66,69 @@ body {
     word-break: break-all;
     overflow: hidden;
     padding: 10px;
+}
+.box h3{
+
+    font-weight: bold;
+    font-family: Roboto;
+    color: #FF9E45;
+    margin: 10px;
+}
+.box .content{
+    display: flex;
+    margin: 20px;
+    flex-direction: row;
+    width: 100%;
+    height: 50vh;
+    justify-content: space-around;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+}
+.box .content .plant-light{
+    display: flex;
+    flex-direction: column;
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    text-align: center;
+    width: 40%;
+}
+.box .content .plant-light p{
+    color: #24AACB;
+    font-size: large;
+    font-weight: bolder;
+    margin: 20px;
+}
+.box .content .text{
+    word-wrap: break-word;
+    word-break: break-all;
+    overflow: hidden;
+    width: 30%;
+    text-align: center;
+    margin-top: 10%;
+}
+.box .content .text p{
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+    line-height: 2;
+}
+.box .picture {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    align-items: flex-start;
+    flex-direction: row;
+}
+.box .picture img{
+    width: 10%;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* margin-top: 10%; */
+}
+.box .picture img:nth-child(2){
+    cursor: pointer;
 }
 .topside{
     display: flex;
@@ -89,57 +152,4 @@ body {
 }
 .topblank {
     flex-grow: 5;
-}
-.box h3{
-    font-size: 36px;
-    font-weight: bold;
-    font-family: Roboto;
-    color: #24AACB;
-    margin: 10px;
-}
-.box .content{
-    display: flex;
-    margin: 20px;
-    flex-direction: row;
-    width: 100%;
-    height: 50vh;
-    justify-content: space-around;
-}
-.box .content p{
-    color: #24AACB;
-    font-weight: bold;
-}
-.box .content .plant{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-.box .content .plant img{
-    margin-bottom: 50px;
-}
-.box .content .gene{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-.box .content .gene img{
-    margin-bottom: 20px;
-}
-.box .picture {
-    display: flex;
-    justify-content: space-between;
-    margin-top: auto;
-    align-items: flex-start;
-    flex-direction: row;
-}
-.box .picture img{
-    width: 10%;
-    margin-left: 20px;
-    margin-right: 20px;
-    /* margin-top: 10%; */
-}
-.box .picture img:nth-child(2){
-    cursor: pointer;
 }

@@ -68,7 +68,7 @@ body {
     padding: 10px;
 }
 .box h3{
-    font-size: 36px;
+
     font-weight: bold;
     font-family: Roboto;
     color: #FF9E45;
@@ -79,7 +79,7 @@ body {
     margin: 20px;
     flex-direction: row;
     width: 100%;
-    height: 50vh;
+    height: 70vh;
     justify-content: space-around;
     word-wrap: break-word;
     word-break: break-all;
@@ -93,12 +93,7 @@ body {
     overflow: hidden;
     text-align: center;
     width: 40%;
-}
-.box .content .plant-light p{
-    color: #24AACB;
-    font-size: large;
-    font-weight: bolder;
-    margin: 20px;
+    height: 100%;
 }
 .box .content .text{
     word-wrap: break-word;
@@ -109,7 +104,13 @@ body {
     margin-top: 10%;
     margin-right: 10%;
 }
-.box .content .text p{
+.box .content .text p:nth-child(1){
+    color: #24AACB;
+    font-size: large;
+    font-weight: 1000;
+    margin: 20px;
+}
+.box .content .text p:nth-child(2){
     color: black;
     font-weight: bolder;
     font-size: larger;

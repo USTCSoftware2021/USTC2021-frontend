@@ -23,4 +23,8 @@ for(let i = 0; i < 4; i++){
     })
 }
 
+function goNext() {
+    window.location.href = "/Education/Search/"
+}
+
     

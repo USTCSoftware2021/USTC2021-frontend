@@ -91,7 +91,7 @@ body {
     flex-grow: 5;
 }
 .box h3{
-    font-size: 36px;
+
     font-weight: bold;
     font-family: Roboto;
     color: #24AACB;
@@ -104,38 +104,28 @@ body {
     width: 100%;
     height: 50vh;
     justify-content: space-around;
-    word-wrap: break-word;
-    word-break: break-all;
-    overflow: hidden;
 }
-.box .content .plant-light{
+.box .content p{
+    color: #24AACB;
+    font-weight: bold;
+}
+.box .content .plant{
     display: flex;
     flex-direction: column;
-    word-wrap: break-word;
-    word-break: break-all;
-    overflow: hidden;
+    justify-content: center;
     text-align: center;
-    width: 40%;
 }
-.box .content .plant-light p{
-    color: #24AACB;
-    font-size: large;
-    font-weight: 200px;
-    margin: 20px;
+.box .content .plant img{
+    margin-bottom: 50px;
 }
-.box .content .text{
-    word-wrap: break-word;
-    word-break: break-all;
-    overflow: hidden;
-    width: 30%;
+.box .content .gene{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    margin-top: 10%;
 }
-.box .content .text p{
-    color: #30D630;
-    font-weight: bolder;
-    font-size: larger;
-    line-height: 2;
+.box .content .gene img{
+    margin-bottom: 20px;
 }
 .box .picture {
     display: flex;
