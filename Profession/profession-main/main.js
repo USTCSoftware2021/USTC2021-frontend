@@ -1,4 +1,4 @@
-var $ = (x) => document.querySelector(x);
+var $_ = (x) => document.querySelector(x);
 var $$ = (x) => document.querySelectorAll(x);
 
 var SVGs = {
@@ -88,7 +88,7 @@ var hash = localStorage.getItem("hash");
 
 function sidebarClickHandler(e) {
     var items = [...$$(".leftside .buttons .li")];
-    var divs = [...$("#content").children];
+    var divs = [...$_("#content").children];
     items.map((elem, index) => {
         if (elem === e.target) {
             elem.classList.add("clicked");
@@ -104,15 +104,15 @@ function applyResult(hash) {
     if (hash) {
         waitUntilSuccessAsync("/api/" + hash + "/DeepTMHMM/", 5000, 500, 80)
             .then((obj) => {
-                $("#transmembrane_topology > .waiting").hidden = true;
-                deepTMHMM = $("#transmembrane_topology");
+                $_("#transmembrane_topology > .waiting").hidden = true;
+                deepTMHMM = $_("#transmembrane_topology");
                 deepTMHMM.querySelector("#topology").innerText =
                     obj["/predicted_topologies.3line"].substr(61);
                 deepTMHMM.querySelector("#statistic").innerText =
                     obj["/TMRs.gff3"];
                 deepTMHMM.querySelector("#topology_img").src =
                     "/api/" + hash + "/DeepTMHMM/plot.png";
-                $("#transmembrane_topology > .result").hidden = false;
+                $_("#transmembrane_topology > .result").hidden = false;
             })
             .catch((err) => {
                 console.log(err);
@@ -120,33 +120,33 @@ function applyResult(hash) {
 
         waitUntilSuccessAsync("/api/" + hash + "/JPred/", 5000, 500, 80)
             .then((obj) => {
-                $("#secondary_structure > .waiting").hidden = true;
-                $("#JPred").innerHTML = obj["svg"];
+                $_("#secondary_structure > .waiting").hidden = true;
+                $_("#JPred").innerHTML = obj["svg"];
                 [...$$(".title > svg > rect")].map((x) => {
                     x.style["fill-opacity"] = 0;
                 });
-                $(".align > svg > rect.st1").style["fillOpacity"] = 0;
-                $(".align > svg > rect.st2").style["fillOpacity"] = 0;
-                $(".align > svg").setAttribute(
+                $_(".align > svg > rect.st1").style["fillOpacity"] = 0;
+                $_(".align > svg > rect.st2").style["fillOpacity"] = 0;
+                $_(".align > svg").setAttribute(
                     "width",
-                    $(".align > svg").getAttribute("width") - 50
+                    $_(".align > svg").getAttribute("width") - 50
                 ); // svg 的本身宽度，由于右侧有空白进行调整
-                $(".align > svg").setAttribute("height", 217);
-                $(".title").style["width"] = "80px";
-                $(".align").style["overflow"] = "auto";
-                $(".st0").style["display"] = "flex";
-                $(".st0").style.width =
-                    window.innerWidth - $(".st0").offsetLeft - 300 + "px";
-                $("#secondary_structure > .result").hidden = false;
+                $_(".align > svg").setAttribute("height", 217);
+                $_(".title").style["width"] = "80px";
+                $_(".align").style["overflow"] = "auto";
+                $_(".st0").style["display"] = "flex";
+                $_(".st0").style.width =
+                    window.innerWidth - $_(".st0").offsetLeft - 300 + "px";
+                $_("#secondary_structure > .result").hidden = false;
             })
             .catch((err) => {
                 console.log(err);
             });
         waitUntilSuccessAsync("/api/" + hash + "/IPC2/", 5000, 500, 80).then(
             (obj) => {
-                $("#isoelectric_point > .waiting").hidden = true;
-                $("#isopoint").innerText = obj["protein"]["protein"];
-                $("#isoelectric_point > .result").hidden = false;
+                $_("#isoelectric_point > .waiting").hidden = true;
+                $_("#isopoint").innerText = obj["protein"]["protein"];
+                $_("#isoelectric_point > .result").hidden = false;
             }
         );
         // loadCellPLoc();
@@ -156,7 +156,7 @@ function applyResult(hash) {
 function loadCellPLoc(cell) {
     waitUntilSuccessAsync("/api/" + hash + "/CellPLoc/", 5000, 500, 80).then(
         (obj) => {
-            $("#subcellular_localization > .waiting").hidden = true;
+            $_("#subcellular_localization > .waiting").hidden = true;
             eval(cell).re.map((re, index) => {
                 if (re.test(obj[cell])) {
                     showClass(eval(cell).cls[index], SVGs[cell]);
@@ -168,33 +168,33 @@ function loadCellPLoc(cell) {
 }
 
 function showUniqueCellPLoc() {
-    if (!$("select").value) {
-        $("#subcellular_localization > .waiting").hidden = false;
+    if (!$_("select").value) {
+        $_("#subcellular_localization > .waiting").hidden = false;
     }
     for (i in SVGs) {
-        if (i === $("select").value) {
-            $("#subcellular_localization > .waiting").hidden = true;
-            $("#" + i + "_cell").classList.remove("cell-hidden");
+        if (i === $_("select").value) {
+            $_("#subcellular_localization > .waiting").hidden = true;
+            $_("#" + i + "_cell").classList.remove("cell-hidden");
         } else {
-            $("#" + i + "_cell").classList.add("cell-hidden");
+            $_("#" + i + "_cell").classList.add("cell-hidden");
         }
     }
 }
 
 function manageSVG() {
-    $("#plant_cell").addEventListener(
+    $_("#plant_cell").addEventListener(
         "load",
         () => {
-            SVGs.plant = $("#plant_cell").getSVGDocument();
+            SVGs.plant = $_("#plant_cell").getSVGDocument();
             hideAllClassOfSVG(plant.cls, SVGs.plant);
             loadCellPLoc("plant");
         },
         false
     );
-    $("#hum_cell").addEventListener(
+    $_("#hum_cell").addEventListener(
         "load",
         () => {
-            SVGs.hum = $("#hum_cell").getSVGDocument();
+            SVGs.hum = $_("#hum_cell").getSVGDocument();
             hideAllClassOfSVG(hum.cls, SVGs.hum);
             loadCellPLoc("hum");
         },
@@ -217,7 +217,7 @@ function showClass(c, svg) {
 }
 
 (function () {
-    var divs = [...$("#content").children];
+    var divs = [...$_("#content").children];
     $$(".leftside .buttons .li")[0].click();
     divs.map((x) => {
         x.hidden = true;

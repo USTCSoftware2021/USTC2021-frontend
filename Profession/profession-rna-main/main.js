@@ -1,9 +1,9 @@
-var $ = (x) => document.querySelector(x);
+var $_ = (x) => document.querySelector(x);
 var $$ = (x) => document.querySelectorAll(x);
 
 function sidebarClickHandler(e) {
     var items = [...$$(".leftside .buttons .li")];
-    var divs = [...$("#content").children];
+    var divs = [...$_("#content").children];
     items.map((elem, index) => {
         if (elem === e.target) {
             elem.classList.add("clicked");
@@ -15,19 +15,30 @@ function sidebarClickHandler(e) {
     });
 }
 
-function applyResult(hash) {
-    postData("http://47.103.25.116/function/v1/array/", data).then((x) => {
-        // console.log(x);
+function applyResult() {
+    var RNA = localStorage.getItem("RNA");
+    var req = {
+        "body": RNA,
+        "result": ""
+    }
+    postData("http://47.103.25.116/function/v1/array/", req).then((res) => {
+        $_("#RNA_secondary_structure > .waiting").hidden = true;
+        var container = new fornac.FornaContainer("#rna_forna", { applyForce: false });
+        var options = {
+            structure: res["result"],
+            sequence: res["body"],
+        };
+        container.addRNA(options.structure, options);
+        console.log(res)
     });
 }
 
 (function () {
-    var divs = [...$("#content").children];
+    var divs = [...$_("#content").children];
     $$(".leftside .buttons .li")[0].click();
     divs.map((x) => {
         x.hidden = true;
     });
     divs[0].hidden = false;
-    manageSVG();
-    applyResult(hash);
+    applyResult();
 })();

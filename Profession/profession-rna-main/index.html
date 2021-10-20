@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Education</title>
     <link rel="stylesheet" href="style.css">
+    <link rel='stylesheet' type='text/css' href='/styles/fornac.css' />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 </head>
 
 <body>
@@ -37,57 +38,24 @@
         </ul>
     </nav>
     <div id="content">
-        <div id="secondary_structure" class="content">
+        <div id="RNA_secondary_structure" class="content">
             <h1 class="model-title">RNA Secondary Structure</h1>
             <p class="by">By IntelRNA</p>
-            <div class="result" hidden>
-                <div id="JPred">
-                    <!-- JPred fulfillment -->
-                </div>
-                <h2>Graph Explanation: </h2>
-                <div class="text-brace">
-                    <p><span class="head">Lupas_x: </span> <span class="major">indicates that the coiled coil regions of
-                            proteins is
-                            predicted by the Lupas algorithm, and x indicates that x amino acids are presented as a set
-                            of
-                            primitives (x = 14,21,18). </span>
-                    </p>
-                    <p class="minor">-: the probability of this region being a coiled coil is 50% and below <br />
-                        c: the probability of this region being a coiled coil is 50% to 90% <br />
-                        C: the probability of this region being a coiled coil is 90% and above</p>
-                    <p><span class="head">JNETCONF：</span> <span class="major">Indicates the confidence level of the
-                            prediction (0-9), The higher the value, the higher the confidence level and the more
-                            accurate the prediction is.</span></p>
-                    <p>
-                        <span class="head">JNETSOLX：</span> <span class="major">indicates the solvent accessibility, and
-                            x indicates the maximum probability of being exposed to the solvent (x = 0,5,25). Take
-                            JNETSOLX for example.</span>
-                    </p>
-                    <p class="minor">-: fragments with a maximum 25% probability of being exposed to the solvent
-                        (hydrophilic) <br />B: fragments with a maximum 25% probability of not being exposed
-                        (hydrophobic)</p>
-                    <p><span class="head">Jnetpred：</span> <span class="major"> secondary structure predicted
-                            with Jnet neural network, the green part is β-sheet, the red part is helix, and the rest is
-                            irregularly folded</span>
-                    </p>
-                    <p><span class="head">JNETHMM：</span> <span class="major">The secondary structure predicted
-                            by the implicit Markov (HMM) model, the results are the same as Jnetpred</span></p>
-                    <p><span class="head">JNETPSSM：</span> <span class="major">The secondary structure predicted by
-                            PSI-BLAST, the results are the same as Jnetpred</span></p>
-
-                </div>
-            </div>
             <img class="waiting" src="/static/cat.gif" />
+            <div class="result">
+                <div id='rna_forna'> </div>
+            </div>
             <div class="strentch"></div>
             <div class="ref">
                 <p>Reference: </p>
-                <a class="ref-link">http://www.compbio.dundee.ac.uk/jpred4/index.html</a>
+                <a class="ref-link"></a>
             </div>
         </div>
     </div>
+    <script type='text/javascript' src='/scripts/fornac.js'></script>
+    <script src="/scripts/utils.js"></script>
+    <script src="main.js"></script>
 </body>
-<script src="/utils.js"></script>
-<script src="main.js"></script>
 <!-- name from four models -->
 
 </html>
