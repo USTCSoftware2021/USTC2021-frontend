@@ -32,26 +32,26 @@ SetStep.prototype.init=function(arg){
     var _that=this;
     extend(this.opt,arg);
     this.opt.stepCounts=this.opt.steps.length;
-    this.content=$_(this.opt.content);
+    this.content=$(this.opt.content);
     this.pageCont=this.content.find(this.opt.pageCont)
-    var w_con=$_(this.content).width();
+    var w_con=$(this.content).width();
     var w_li=(w_con-this.opt.stepContainerMar*2)/this.opt.stepCounts/2;
     var stepContainer=this.content.find('.ystep-container');
     this.stepContainer=stepContainer;
-    var stepsHtml=$_("<ul class='ystep-container-steps'></ul>");
+    var stepsHtml=$("<ul class='ystep-container-steps'></ul>");
     var stepDisc = "<li class='ystep-step ystep-step-undone'></li>";
-    var stepP=$_("<div class='ystep-progress'>"+
+    var stepP=$("<div class='ystep-progress'>"+
                 "<p class='ystep-progress-bar'><span class='ystep-progress-highlight' style='width:0%'></span></p>"+
             "</div>");
-    var stepButtonHtml =$_( "<div class='step-button'><div class='before1' ><button type='button' class='btn btn-default prevBtn change' id='prevBtn' class='prevBtn'><img src='/static/arrow-r.png' ></button></div>"+
+    var stepButtonHtml =$( "<div class='step-button'><div class='before1' ><button type='button' class='btn btn-default prevBtn change' id='prevBtn' class='prevBtn'><img src='/static/arrow-r.png' ></button></div>"+
                         "<div class='next1' id='abc'><button type='button' class='btn btn-default nextBtn change' id='nextBtn' class='nextBtn'><img src='/static/arrow.png' ></img></button></div></div>");
     stepP.css('width',w_li*2*(this.opt.stepCounts-1));
     stepP.find('.ystep-progress-bar').css('width',w_li*2*(this.opt.stepCounts-1))
     for(var i=0;i<this.opt.stepCounts;i++){
         if(i==0){
-            var _s=$_(stepDisc).text(this.opt.steps[i]).addClass('')
+            var _s=$(stepDisc).text(this.opt.steps[i]).addClass('')
         }else{
-            var _s=$_(stepDisc).text(this.opt.steps[i])
+            var _s=$(stepDisc).text(this.opt.steps[i])
         }
         stepsHtml.append(_s);
     }
@@ -68,7 +68,7 @@ SetStep.prototype.init=function(arg){
         this.nextBtn=this.content.find(this.opt.nextBtn)
         this.prevBtn.on('click',function(){
             // if($(this).hasClass('handleAble')){
-            if($_(_that).attr('disabled')||_that.opt.animating){
+            if($(_that).attr('disabled')||_that.opt.animating){
                 return false;
             }else{
                 _that.opt.animating=true;
@@ -78,7 +78,7 @@ SetStep.prototype.init=function(arg){
         })
         this.nextBtn.on('click',function(){
             // if($(this).hasClass('handleAble')){
-            if($_(_that).attr('disabled')||_that.opt.animating){
+            if($(_that).attr('disabled')||_that.opt.animating){
                 return false;
             }else{
                 _that.opt.animating=true;
@@ -90,12 +90,12 @@ SetStep.prototype.init=function(arg){
     //判断时候可点击进度条 并绑定点击事件
     if(this.opt.clickAble){
         stepsHtml.find('li').on('click',function(){
-            _that.opt.curStep=$_(this).index()+1;
+            _that.opt.curStep=$(this).index()+1;
             _that.setProgress(_that.stepContainer,_that.opt.curStep,_that.opt.stepCounts)
         })
     }
-     $_(window).resize(function(){
-        var w_con=$_(_that.content).width();
+     $(window).resize(function(){
+        var w_con=$(_that.content).width();
         var w_li=w_con/_that.opt.stepCounts/2;
         stepP.css('width',w_li*2*(_that.opt.stepCounts-1));
         stepP.find('.ystep-progress-bar').css('width',w_li*2*(_that.opt.stepCounts-1))
@@ -107,8 +107,8 @@ SetStep.prototype.init=function(arg){
 SetStep.prototype.setProgress=function(n,curIndex,stepsLen){
       var _that=this;
         //获取当前容器下所有的步骤
-        var $steps = $_(n).find("li");
-        var $progress =$_(n).find(".ystep-progress-highlight");
+        var $steps = $(n).find("li");
+        var $progress =$(n).find(".ystep-progress-highlight");
         //判断当前步骤是否在范围内
         if(1<=curIndex && curIndex<=$steps.length){
           //更新进度
@@ -121,7 +121,7 @@ SetStep.prototype.setProgress=function(n,curIndex,stepsLen){
             done: function() {
               //移动节点
               $steps.each(function(j,m){
-                var _$m = $_(m);
+                var _$m = $(m);
                 var _j = j+1;
                 if(_j < curIndex){
                   _$m.attr("class","ystep-step-done");
