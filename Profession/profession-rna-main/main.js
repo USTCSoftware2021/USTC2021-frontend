@@ -23,13 +23,13 @@ function applyResult() {
     }
     postData("/IntelRNA", req).then((res) => {
         $_("#RNA_secondary_structure > .waiting").hidden = true;
-        var container = new fornac.FornaContainer("#rna_forna", { applyForce: false });
+        var container = new fornac.FornaContainer("#rna_forna", { applyForce: false, 'initialSize':[550,550]});
         var options = {
             structure: res["result"],
             sequence: res["body"],
         };
         container.addRNA(options.structure, options);
-        console.log(res)
+        // console.log(res)
     });
 }
 
