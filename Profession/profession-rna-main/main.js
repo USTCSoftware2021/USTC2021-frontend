@@ -21,7 +21,7 @@ function applyResult() {
         "body": RNA,
         "result": ""
     }
-    postData("http://47.103.25.116/function/v1/array/", req).then((res) => {
+    postData("/IntelRNA", req).then((res) => {
         $_("#RNA_secondary_structure > .waiting").hidden = true;
         var container = new fornac.FornaContainer("#rna_forna", { applyForce: false });
         var options = {
