@@ -92,9 +92,7 @@ body {
     margin-right: 20px;
     /* margin-top: 10%; */
 }
-.box .picture img:nth-child(2){
-    cursor: pointer;
-}
+
 .topside{
     display: flex;
     flex-flow: row;

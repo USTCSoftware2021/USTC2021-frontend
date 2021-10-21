@@ -27,7 +27,7 @@
     padding: 10px;
 }
 
-.group-label {
+.part-label {
     word-break: normal;
     max-width: 70%;
     display: block;
@@ -55,3 +55,29 @@
     text-shadow: 4px 4px 0px #fce28a;
 }
 
+#next {
+    cursor: pointer;
+    padding-bottom: 20px;
+}
+
+.picture {
+    align-items: flex-end !important;
+}
+
+.content {
+    /*justify-content: flex-end !important;*/
+    /*margin: 0 !important;*/
+}
+
+.slide-cont-part {
+    min-height: 80%;
+}
+
+.slide-cont-part img {
+    max-height: 50%;
+    margin: auto !important;
+}
+
+.part-label {
+    margin: auto;
+}
