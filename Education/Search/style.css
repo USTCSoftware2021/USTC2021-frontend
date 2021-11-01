@@ -35,6 +35,7 @@ body {
 }
 .barword a{
     display: block;
+    line-height: 60px;
     color: white;
     text-decoration:none !important;
     font-size: 20px;
